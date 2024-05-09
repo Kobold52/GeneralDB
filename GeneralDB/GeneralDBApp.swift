@@ -11,7 +11,9 @@ import SwiftUI
 struct GeneralDBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // ContentView()
+            ObjectPatternListScreen()
         }
+        .modelContainer(for: [ObjectPattern.self, AttributPattern.self])
     }
 }
