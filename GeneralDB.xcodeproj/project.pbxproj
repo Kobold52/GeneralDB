@@ -13,12 +13,22 @@
 		FD6D3EF92BECFC5000D8D8F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6D3EF82BECFC5000D8D8F7 /* Preview Assets.xcassets */; };
 		FD6D3F022BECFF2000D8D8F7 /* ObjectPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F012BECFF2000D8D8F7 /* ObjectPattern.swift */; };
 		FD6D3F052BED016500D8D8F7 /* ObjectEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F042BED016500D8D8F7 /* ObjectEnums.swift */; };
-		FD6D3F072BED0B7A00D8D8F7 /* Attributmuster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F062BED0B7A00D8D8F7 /* Attributmuster.swift */; };
+		FD6D3F072BED0B7A00D8D8F7 /* AttributPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F062BED0B7A00D8D8F7 /* AttributPattern.swift */; };
 		FD6D3F092BED0E5100D8D8F7 /* AttributEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F082BED0E5100D8D8F7 /* AttributEnums.swift */; };
 		FD6D3F0D2BED122A00D8D8F7 /* ObjectPatternListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F0C2BED122A00D8D8F7 /* ObjectPatternListScreen.swift */; };
 		FD6D3F102BED146600D8D8F7 /* EditObjectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F0F2BED146600D8D8F7 /* EditObjectPatternScreen.swift */; };
 		FD6D3F122BED1A2D00D8D8F7 /* ObjectPatternRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F112BED1A2D00D8D8F7 /* ObjectPatternRowView.swift */; };
 		FD6D3F142BED1DE100D8D8F7 /* ObjectPatternListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F132BED1DE100D8D8F7 /* ObjectPatternListView.swift */; };
+		FD6D3F162BEE29C300D8D8F7 /* AttributPatternListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F152BEE29C300D8D8F7 /* AttributPatternListScreen.swift */; };
+		FD6D3F192BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F182BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift */; };
+		FD6D3F1B2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F1A2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift */; };
+		FD6D3F1D2BEE2E6F00D8D8F7 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F1C2BEE2E6F00D8D8F7 /* Unit.swift */; };
+		FD6D3F1F2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F1E2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift */; };
+		FD6D3F212BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F202BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift */; };
+		FD6D3F252BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */; };
+		FD6D3F272BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F262BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift */; };
+		FD6D3F292BEF6BE500D8D8F7 /* AddAttributsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F282BEF6BE500D8D8F7 /* AddAttributsScreen.swift */; };
+		FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +40,22 @@
 		FD6D3EFF2BECFCAD00D8D8F7 /* readMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readMe.md; sourceTree = "<group>"; };
 		FD6D3F012BECFF2000D8D8F7 /* ObjectPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPattern.swift; sourceTree = "<group>"; };
 		FD6D3F042BED016500D8D8F7 /* ObjectEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectEnums.swift; sourceTree = "<group>"; };
-		FD6D3F062BED0B7A00D8D8F7 /* Attributmuster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributmuster.swift; sourceTree = "<group>"; };
+		FD6D3F062BED0B7A00D8D8F7 /* AttributPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPattern.swift; sourceTree = "<group>"; };
 		FD6D3F082BED0E5100D8D8F7 /* AttributEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributEnums.swift; sourceTree = "<group>"; };
 		FD6D3F0C2BED122A00D8D8F7 /* ObjectPatternListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternListScreen.swift; sourceTree = "<group>"; };
 		FD6D3F0F2BED146600D8D8F7 /* EditObjectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditObjectPatternScreen.swift; sourceTree = "<group>"; };
 		FD6D3F112BED1A2D00D8D8F7 /* ObjectPatternRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternRowView.swift; sourceTree = "<group>"; };
 		FD6D3F132BED1DE100D8D8F7 /* ObjectPatternListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternListView.swift; sourceTree = "<group>"; };
+		FD6D3F152BEE29C300D8D8F7 /* AttributPatternListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternListScreen.swift; sourceTree = "<group>"; };
+		FD6D3F182BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributPattern+Extensions.swift"; sourceTree = "<group>"; };
+		FD6D3F1A2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternRowView.swift; sourceTree = "<group>"; };
+		FD6D3F1C2BEE2E6F00D8D8F7 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		FD6D3F1E2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternTypSelectionView.swift; sourceTree = "<group>"; };
+		FD6D3F202BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternMasterDataView.swift; sourceTree = "<group>"; };
+		FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributListOfObjectPatternView.swift; sourceTree = "<group>"; };
+		FD6D3F262BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributlistOfObjectPatternScreen.swift; sourceTree = "<group>"; };
+		FD6D3F282BEF6BE500D8D8F7 /* AddAttributsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttributsScreen.swift; sourceTree = "<group>"; };
+		FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +89,12 @@
 			isa = PBXGroup;
 			children = (
 				FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */,
+				FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */,
+				FD6D3F002BECFEF100D8D8F7 /* Models */,
 				FD6D3F0B2BED119400D8D8F7 /* Views */,
 				FD6D3F0A2BED118800D8D8F7 /* Screens */,
 				FD6D3F032BED014600D8D8F7 /* enums */,
-				FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */,
-				FD6D3F002BECFEF100D8D8F7 /* Models */,
+				FD6D3F172BEE2B2E00D8D8F7 /* Extensions */,
 				FD6D3EFF2BECFCAD00D8D8F7 /* readMe.md */,
 				FD6D3EF52BECFC5000D8D8F7 /* Assets.xcassets */,
 				FD6D3EF72BECFC5000D8D8F7 /* Preview Content */,
@@ -93,7 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				FD6D3F012BECFF2000D8D8F7 /* ObjectPattern.swift */,
-				FD6D3F062BED0B7A00D8D8F7 /* Attributmuster.swift */,
+				FD6D3F062BED0B7A00D8D8F7 /* AttributPattern.swift */,
+				FD6D3F1C2BEE2E6F00D8D8F7 /* Unit.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,6 +134,9 @@
 			children = (
 				FD6D3F0C2BED122A00D8D8F7 /* ObjectPatternListScreen.swift */,
 				FD6D3F0F2BED146600D8D8F7 /* EditObjectPatternScreen.swift */,
+				FD6D3F152BEE29C300D8D8F7 /* AttributPatternListScreen.swift */,
+				FD6D3F262BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift */,
+				FD6D3F282BEF6BE500D8D8F7 /* AddAttributsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -119,10 +144,47 @@
 		FD6D3F0B2BED119400D8D8F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FD6D3F112BED1A2D00D8D8F7 /* ObjectPatternRowView.swift */,
-				FD6D3F132BED1DE100D8D8F7 /* ObjectPatternListView.swift */,
+				FD6D3F2A2BEF6FAF00D8D8F7 /* Share */,
+				FD6D3F232BEE3D7B00D8D8F7 /* AttributPattern */,
+				FD6D3F222BEE3D0A00D8D8F7 /* ObjectPattern */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FD6D3F172BEE2B2E00D8D8F7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D3F182BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FD6D3F222BEE3D0A00D8D8F7 /* ObjectPattern */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D3F112BED1A2D00D8D8F7 /* ObjectPatternRowView.swift */,
+				FD6D3F132BED1DE100D8D8F7 /* ObjectPatternListView.swift */,
+				FD6D3F1E2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift */,
+				FD6D3F202BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift */,
+			);
+			path = ObjectPattern;
+			sourceTree = "<group>";
+		};
+		FD6D3F232BEE3D7B00D8D8F7 /* AttributPattern */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D3F1A2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift */,
+				FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */,
+			);
+			path = AttributPattern;
+			sourceTree = "<group>";
+		};
+		FD6D3F2A2BEF6FAF00D8D8F7 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */,
+			);
+			path = Share;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,15 +258,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6D3F142BED1DE100D8D8F7 /* ObjectPatternListView.swift in Sources */,
+				FD6D3F292BEF6BE500D8D8F7 /* AddAttributsScreen.swift in Sources */,
+				FD6D3F1F2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift in Sources */,
+				FD6D3F162BEE29C300D8D8F7 /* AttributPatternListScreen.swift in Sources */,
+				FD6D3F1B2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift in Sources */,
+				FD6D3F1D2BEE2E6F00D8D8F7 /* Unit.swift in Sources */,
+				FD6D3F252BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift in Sources */,
 				FD6D3F022BECFF2000D8D8F7 /* ObjectPattern.swift in Sources */,
+				FD6D3F212BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift in Sources */,
 				FD6D3F092BED0E5100D8D8F7 /* AttributEnums.swift in Sources */,
 				FD6D3F122BED1A2D00D8D8F7 /* ObjectPatternRowView.swift in Sources */,
 				FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */,
+				FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */,
 				FD6D3F102BED146600D8D8F7 /* EditObjectPatternScreen.swift in Sources */,
 				FD6D3F0D2BED122A00D8D8F7 /* ObjectPatternListScreen.swift in Sources */,
+				FD6D3F272BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift in Sources */,
 				FD6D3F052BED016500D8D8F7 /* ObjectEnums.swift in Sources */,
 				FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */,
-				FD6D3F072BED0B7A00D8D8F7 /* Attributmuster.swift in Sources */,
+				FD6D3F192BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift in Sources */,
+				FD6D3F072BED0B7A00D8D8F7 /* AttributPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

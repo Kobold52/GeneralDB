@@ -11,9 +11,12 @@ import SwiftUI
 struct GeneralDBApp: App {
     var body: some Scene {
         WindowGroup {
-            // ContentView()
-            ObjectPatternListScreen()
+            ContentView()
         }
         .modelContainer(for: [ObjectPattern.self, AttributPattern.self])
+    }
+    
+    init() {
+        print(URL.applicationSupportDirectory.path(percentEncoded: false))
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Attributmuster.swift
+//  AttributPattern.swift
 //  GeneralDB
 //
 //  Created by Peter Bien on 09.05.24.
@@ -18,14 +18,25 @@ class AttributPattern {
     var changed: Date?
     var objectPattern: ObjectPattern?
     
-    init(name: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, created: Date, changed: Date? = nil, objectPattern: ObjectPattern? = nil) {
+    init(name: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, 
+         changed: Date? = nil, objectPattern: ObjectPattern? = nil) {
         self.name = name
         self.genre = genre
         self.dataTyp = dataTyp
         self.unit = unit
-        self.created = created
-        self.changed = changed
+        self.created = Date.now
+//        self.changed = changed
         self.objectPattern = objectPattern
+    }
+    
+    init(attributPattern: AttributPattern) {
+        self.name = attributPattern.name
+        self.genre = attributPattern.genre
+        self.dataTyp = attributPattern.dataTyp
+        self.unit = attributPattern.unit
+        self.created = Date.now
+//        self.changed = attributPattern.changed
+        self.objectPattern = attributPattern.objectPattern
     }
 
 }

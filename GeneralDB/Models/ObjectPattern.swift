@@ -27,18 +27,19 @@ class ObjectPattern {
     
     // Hilfsattribute
     
-    @Transient var icon: Image {
-        switch ObjectStatus(rawValue: status.rawValue)! {
+    @Transient var statusIcon: Image {
+        switch ObjectStatus(rawValue: status.rawValue) {
         case .inProgress:
-            Image(systemName: "hourglass")
-        
+            Image(systemName: "hammer.circle")
         case .released:
             Image(systemName: "checkmark.circle")
+        case .none:
+            Image(systemName: "questionmark.circle")
         }
     }
     
     
-    @Transient var typeIcon: Image {
+    @Transient var genreIcon: Image {
         switch ObjectType(rawValue: genre.rawValue ) {
         case .unkown:
             Image(systemName: "questionmark.circle")
@@ -58,6 +59,26 @@ class ObjectPattern {
             Image(systemName: "exclamationmark.triangle")
         }
     }
+    
+    var genreColor: Color {
+        switch ObjectType(rawValue: genre.rawValue)! {
+        case .unkown:
+                .gray
+        case .Area:
+                .blue
+        case .Construction:
+                .red
+        case .Company:
+                .green
+        case .Contract:
+                .brown
+        case .Equipment:
+                .cyan
+        case .Person:
+                .indigo
+        }
+    }
+
 }
 
 

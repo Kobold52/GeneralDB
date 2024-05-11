@@ -13,7 +13,7 @@ struct ObjectPatternListScreen: View {
     
     @Query var objPattern: [ObjectPattern]
     
-    @State private var path = [ObjectPattern]()
+    @State private var path = NavigationPath()
     @State private var searchText = ""
     
     var body: some View {
@@ -21,7 +21,7 @@ struct ObjectPatternListScreen: View {
             ObjectPatternListView(searchString: searchText)
             .navigationTitle("Object pattern")
             .navigationDestination(for: ObjectPattern.self) { obj in
-                EditObjectPatternScreen(objectPattern: obj)
+                EditObjectPatternScreen(objectPattern: obj, navigationPath: $path)
             }
             .toolbar {
                 Button("Add ObjectPattern", systemImage: "plus.circle", action: addObjectPattern)
