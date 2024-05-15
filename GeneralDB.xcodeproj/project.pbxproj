@@ -26,9 +26,12 @@
 		FD6D3F1F2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F1E2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift */; };
 		FD6D3F212BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F202BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift */; };
 		FD6D3F252BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */; };
-		FD6D3F272BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F262BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift */; };
-		FD6D3F292BEF6BE500D8D8F7 /* AddAttributsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F282BEF6BE500D8D8F7 /* AddAttributsScreen.swift */; };
 		FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */; };
+		FD6D3F2E2BEF8A1500D8D8F7 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2D2BEF8A1500D8D8F7 /* Previewer.swift */; };
+		FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */; };
+		FD6D3F322BEFA17800D8D8F7 /* BootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */; };
+		FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */; };
+		FDABD1B62BF4C336004544D3 /* AttributPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B52BF4C336004544D3 /* AttributPatternView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +56,12 @@
 		FD6D3F1E2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternTypSelectionView.swift; sourceTree = "<group>"; };
 		FD6D3F202BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPatternMasterDataView.swift; sourceTree = "<group>"; };
 		FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributListOfObjectPatternView.swift; sourceTree = "<group>"; };
-		FD6D3F262BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributlistOfObjectPatternScreen.swift; sourceTree = "<group>"; };
-		FD6D3F282BEF6BE500D8D8F7 /* AddAttributsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttributsScreen.swift; sourceTree = "<group>"; };
 		FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
+		FD6D3F2D2BEF8A1500D8D8F7 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
+		FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRowView.swift; sourceTree = "<group>"; };
+		FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampView.swift; sourceTree = "<group>"; };
+		FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttributPatternToObjejectPatternScreen.swift; sourceTree = "<group>"; };
+		FDABD1B52BF4C336004544D3 /* AttributPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		FD6D3EF72BECFC5000D8D8F7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D3F2D2BEF8A1500D8D8F7 /* Previewer.swift */,
 				FD6D3EF82BECFC5000D8D8F7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -135,8 +142,7 @@
 				FD6D3F0C2BED122A00D8D8F7 /* ObjectPatternListScreen.swift */,
 				FD6D3F0F2BED146600D8D8F7 /* EditObjectPatternScreen.swift */,
 				FD6D3F152BEE29C300D8D8F7 /* AttributPatternListScreen.swift */,
-				FD6D3F262BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift */,
-				FD6D3F282BEF6BE500D8D8F7 /* AddAttributsScreen.swift */,
+				FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 			children = (
 				FD6D3F1A2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift */,
 				FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */,
+				FDABD1B52BF4C336004544D3 /* AttributPatternView.swift */,
 			);
 			path = AttributPattern;
 			sourceTree = "<group>";
@@ -183,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */,
+				FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */,
+				FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -258,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6D3F142BED1DE100D8D8F7 /* ObjectPatternListView.swift in Sources */,
-				FD6D3F292BEF6BE500D8D8F7 /* AddAttributsScreen.swift in Sources */,
 				FD6D3F1F2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift in Sources */,
 				FD6D3F162BEE29C300D8D8F7 /* AttributPatternListScreen.swift in Sources */,
 				FD6D3F1B2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift in Sources */,
@@ -269,14 +277,18 @@
 				FD6D3F092BED0E5100D8D8F7 /* AttributEnums.swift in Sources */,
 				FD6D3F122BED1A2D00D8D8F7 /* ObjectPatternRowView.swift in Sources */,
 				FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */,
+				FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */,
 				FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */,
 				FD6D3F102BED146600D8D8F7 /* EditObjectPatternScreen.swift in Sources */,
+				FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */,
+				FD6D3F322BEFA17800D8D8F7 /* BootcampView.swift in Sources */,
+				FDABD1B62BF4C336004544D3 /* AttributPatternView.swift in Sources */,
 				FD6D3F0D2BED122A00D8D8F7 /* ObjectPatternListScreen.swift in Sources */,
-				FD6D3F272BEE713C00D8D8F7 /* AttributlistOfObjectPatternScreen.swift in Sources */,
 				FD6D3F052BED016500D8D8F7 /* ObjectEnums.swift in Sources */,
 				FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */,
 				FD6D3F192BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift in Sources */,
 				FD6D3F072BED0B7A00D8D8F7 /* AttributPattern.swift in Sources */,
+				FD6D3F2E2BEF8A1500D8D8F7 /* Previewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

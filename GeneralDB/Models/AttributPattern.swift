@@ -11,19 +11,23 @@ import SwiftData
 @Model
 class AttributPattern {
     var name: String = ""
+    var prompt: String = "?"
     var genre: AttributGenre
     var dataTyp: AttributDataType
     var unit: String
+    var tracked: Bool = false
     var created: Date = Date.now
     var changed: Date?
     var objectPattern: ObjectPattern?
-    
-    init(name: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, 
-         changed: Date? = nil, objectPattern: ObjectPattern? = nil) {
+        
+    init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String,
+         tracked: Bool = false, changed: Date? = nil, objectPattern: ObjectPattern? = nil) {
         self.name = name
+        self.prompt = prompt
         self.genre = genre
         self.dataTyp = dataTyp
         self.unit = unit
+        self.tracked = tracked
         self.created = Date.now
 //        self.changed = changed
         self.objectPattern = objectPattern
@@ -31,9 +35,11 @@ class AttributPattern {
     
     init(attributPattern: AttributPattern) {
         self.name = attributPattern.name
+        self.prompt = attributPattern.prompt
         self.genre = attributPattern.genre
         self.dataTyp = attributPattern.dataTyp
         self.unit = attributPattern.unit
+        self.tracked = attributPattern.tracked
         self.created = Date.now
 //        self.changed = attributPattern.changed
         self.objectPattern = attributPattern.objectPattern

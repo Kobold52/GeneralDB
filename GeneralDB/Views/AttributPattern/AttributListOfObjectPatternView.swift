@@ -11,24 +11,52 @@ struct AttributListOfObjectPatternView: View {
     @Environment(\.modelContext) var modelContext
     
     @Bindable var objectPattern: ObjectPattern
+    @Binding var navigationPath: NavigationPath
+    
+    // Definition of table with 4 columns
+    // Titels
+    let columns: [Int] = [
+        200,    // Spalte 1
+        100,    // Spalte 2
+        200,
+        100
+    ]
+    
+    let titels: [GridValue] = [
+        GridValue(value: "Genre"),
+        GridValue(value: "Unit"),
+        GridValue(value: "Prompt"),
+        GridValue(value: "tracked")
+    ]
+    
+    var values: [GridValue] = []
+    
     
     var body: some View {
-        
-       
-        List {
-            Group {
-                if objectPattern.attributs.isEmpty {
-                    ContentUnavailableView("Enter your first attribut for object pattern.", systemImage: "gearshape.2.fill")
-                } else {
-                    ForEach(objectPattern.attributs) { attribut in
-                        NavigationLink(value: attribut) {
-                            AttributPatternRowView(object: attribut)
+        VStack {
+            if objectPattern.attributs.isEmpty {
+                ContentUnavailableView("Enter your first attribut for object pattern.", systemImage: "gearshape.2.fill")
+            } else {
+                
+                GridRowView(col: columns, values: titels)
+                    .padding(.leading)
+                    .font(.title2)
+                
+                ForEach(objectPattern.attributs) { attribut in
+                    AttributPatternRowView(object: attribut)
+                        .padding(.leading)
+                        .onTapGesture {
+                            navigationPath.append(attribut)
                         }
-                    }
-                    .onDelete(perform: deleteAttributPattern )
                 }
+                .onDelete(perform: deleteAttributPattern )
+                
+                .border(Color.black)
+                
             }
         }
+        .border(Color.black)
+        
     }
     
     func deleteAttributPattern(at offsets: IndexSet) {
@@ -39,6 +67,13 @@ struct AttributListOfObjectPatternView: View {
     }
 }
 
-//#Preview {
-//    AttributListOfObjectPatternView()
-//}
+#Preview {
+    do {
+        let previewer = try Previewer()
+        
+        return AttributListOfObjectPatternView(objectPattern: previewer.objectPattern, navigationPath: .constant(NavigationPath()))
+            .modelContainer(previewer.container)
+    } catch {
+        fatalError("big Problem")
+    }
+}

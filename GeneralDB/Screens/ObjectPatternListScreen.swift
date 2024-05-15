@@ -13,19 +13,24 @@ struct ObjectPatternListScreen: View {
     
     @Query var objPattern: [ObjectPattern]
     
-    @State private var path = NavigationPath()
+    @State var path = NavigationPath()
+    
     @State private var searchText = ""
     
     var body: some View {
+        
         NavigationStack(path: $path) {
             ObjectPatternListView(searchString: searchText)
-            .navigationTitle("Object pattern")
-            .navigationDestination(for: ObjectPattern.self) { obj in
-                EditObjectPatternScreen(objectPattern: obj, navigationPath: $path)
-            }
-            .toolbar {
-                Button("Add ObjectPattern", systemImage: "plus.circle", action: addObjectPattern)
-            }
+                .navigationTitle("Object pattern")
+                .navigationDestination(for: ObjectPattern.self) { obj in
+                    EditObjectPatternScreen(objectPattern: obj, navigationPath: $path)
+                }
+                .navigationDestination(for: AttributPattern.self) { attribut in
+                    AttributPatternRowView(object: attribut)
+                }
+                .toolbar {
+                    Button("Add ObjectPattern", systemImage: "plus.circle", action: addObjectPattern)
+                }
             .searchable(text: $searchText)
         }
     }

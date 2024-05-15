@@ -11,16 +11,18 @@ import SwiftData
 struct AttributPatternListScreen: View {
     @Environment(\.modelContext) var modelContext
     
+    @State var path = NavigationPath()
+    
     @Query(sort: \AttributPattern.name) private var objects: [AttributPattern]
     
     @State private var showNewAttributPatternScreen: Bool = false
 
     var body: some View {
         NavigationStack {
-            Group {
-                if objects.isEmpty {
-                    ContentUnavailableView("Load all attribut pattern", systemImage: "gearshape.2.fill")
-                } else {
+//            Group {
+//                if objects.isEmpty {
+//                    ContentUnavailableView("Load all attribut pattern", systemImage: "gearshape.2.fill")
+//                } else {
                     List {
                         ForEach(objects) { object in
                             AttributPatternRowView(object: object)
@@ -29,7 +31,7 @@ struct AttributPatternListScreen: View {
                     }
                     .listStyle(InsetListStyle())
                     .scrollContentBackground(.hidden)
-                }
+//                }
 
             }
             .frame(width: 600)
@@ -46,7 +48,7 @@ struct AttributPatternListScreen: View {
                 }
             }
             
-        }
+//        }
     }
     
     func createAttributPatternList() {

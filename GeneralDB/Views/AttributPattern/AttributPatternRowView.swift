@@ -9,22 +9,43 @@ import SwiftUI
 import SwiftData
 
 struct AttributPatternRowView: View {
-    @State var object: AttributPattern
+    @Environment(\.modelContext) var modelContent
     
-    let col = [GridItem(.fixed(200)), GridItem(.fixed(100))]
+    @Bindable var object: AttributPattern
+    
+    let col = [
+        300,
+        100,
+        200,
+        100
+    ]
+    
+    var values: [GridValue] = []
 
     var body: some View {
         ScrollView(.horizontal) {
-            LazyVGrid(columns: col, alignment: .leading, content: {
-                Text(object.name)
-                // Text("\(object.genre)")
-                Text(Unit().getValue(value: 0.0, unit: object.unit, symbol: true))
-            })
+            GridRowView(col: col, values: prepareTable(attribut: object))
+//            Text(getString())
         }
-
      }
+    
+    func prepareTable(attribut: AttributPattern) -> [GridValue] {
+        return [
+            GridValue(value: attribut.genre.descr),
+            GridValue(value: Unit().getValue(value: 0.0, unit: object.unit, symbol: true)),
+            GridValue(value: attribut.prompt),
+            GridValue(value: "binoculars", displayType: .image)
+        ]
+    }
 }
 
-//#Preview {
-//    AttributPatternRowView()
-//}
+#Preview {
+    do {
+        let previewer = try Previewer()
+        
+        return AttributPatternRowView(object: previewer.attributPattern)
+            .modelContainer(previewer.container)
+    } catch {
+        fatalError("big Problem")
+    }
+}

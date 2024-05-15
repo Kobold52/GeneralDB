@@ -15,28 +15,36 @@ struct ObjectPatternMasterDataView: View {
     @FocusState private var focusField: FocusField?
  
     enum FocusField {
-        case name, summary, status
+        case name, summary
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Text("Masterdata")
-                .font(.title)
-            
+                .font(.title2.bold())
+           
             TextField("Name", text: $objectPattern.name)
+                .focused($focusField, equals: .name)
                 .padding(2)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .border(.selection)
                 .background(focusField == .name ? .blue.opacity(0.3) : .gray.opacity(0.3))
-            
-            TextField("Summary", text: $objectPattern.summary)
+                .onSubmit {
+                    focusField = .summary
+                }
+              
+            TextField("", text: $objectPattern.summary, axis: .vertical)
+                .focused($focusField, equals: .summary)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(false)
+                .multilineTextAlignment(.leading)
+                .frame(maxHeight: 100)
                 .border(.selection)
-                .background(focusField == .name ? .blue.opacity(0.3) : .gray.opacity(0.3))
-            
-               
+                .background(focusField == .summary ? .blue.opacity(0.3) : .gray.opacity(0.3))
+                .onSubmit {
+                    focusField = nil
+                }
         }
         .onAppear() {
             focusField = .name
@@ -45,6 +53,13 @@ struct ObjectPatternMasterDataView: View {
     
 }
 
-//#Preview {
-//    ObjectPatternMasterDataView()
-//}
+#Preview {
+    do {
+        let previewer = try Previewer()
+        
+        return ObjectPatternMasterDataView(objectPattern: previewer.objectPattern)
+            .modelContainer(previewer.container)
+    } catch {
+        fatalError("big Problem")
+    }
+}

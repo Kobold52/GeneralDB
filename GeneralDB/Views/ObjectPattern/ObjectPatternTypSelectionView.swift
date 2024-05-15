@@ -13,11 +13,6 @@ struct ObjectPatternTypSelectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(objectPattern.genre.descr)
-                objectPattern.genreIcon
-            }
-            .font(.title2)
-            HStack {
                 Text("Genre")
                 Picker("", selection: $objectPattern.genre) {
                     ForEach(ObjectType.allCases) { genre in
@@ -27,6 +22,8 @@ struct ObjectPatternTypSelectionView: View {
                 .disabled(objectPattern.genre != ObjectType.unkown)
                 .border(.selection)
                 
+                Spacer()
+                
                 Text("Status")
                 Picker("", selection: $objectPattern.status) {
                     ForEach(ObjectStatus.allCases) { status in
@@ -35,11 +32,17 @@ struct ObjectPatternTypSelectionView: View {
                 }
                 .border(.selection)
             }
-            
         }
     }
 }
 
-//#Preview {
-//    ObjectPatternTypSelectionView()
-//}
+#Preview {
+    do {
+        let previewer = try Previewer()
+        
+        return ObjectPatternTypSelectionView(objectPattern: previewer.objectPattern)
+            .modelContainer(previewer.container)
+    } catch {
+        fatalError("big Problem")
+    }
+}
