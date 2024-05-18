@@ -18,8 +18,9 @@ struct EditObjectPatternScreen: View {
     var body: some View {
         Form {
             HStack {
-                Text(objectPattern.genre.descr)
                 objectPattern.genreIcon
+                Text(objectPattern.genre.descr)
+                Text(objectPattern.name)
             }
             .font(.title2.bold())
             // Auswahl des Typs und Status
@@ -27,18 +28,21 @@ struct EditObjectPatternScreen: View {
             // Stammdaten
             ObjectPatternMasterDataView(objectPattern: objectPattern)
             
-            
+            // Liste aller Attribute
             HStack {
                 Text("List of attributs ( \(objectPattern.attributs.count) )")
                 Spacer()
                 Button("Add Attribut") {
-//                    addAttribut()
                     showAttributSelectDialog = true
                 }
             }
-            .font(.title2.bold())
+                .font(.title2.bold())
             
             AttributListOfObjectPatternView(objectPattern: objectPattern, navigationPath: $navigationPath)
+                .toolbar {
+                    EditButton()
+                }
+                .border(Color.black)
             
         }
         .sheet(isPresented: $showAttributSelectDialog) {
@@ -49,16 +53,6 @@ struct EditObjectPatternScreen: View {
         .navigationTitle("Object pattern \(objectPattern.name)")
         .navigationBarTitleDisplayMode(.inline)
     }
-    
-    func addAttribut() {
-        showAttributSelectDialog = true
-//        let attribut = AttributPattern(name: "", prompt: "?", genre: .unkown, dataTyp: .unkown, unit: "", objectPattern: objectPattern)
-//        print(objectPattern.name)
-//        modelContext.insert(attribut)
-//        navigationPath.append(attribut)
-    }
-    
-    
 }
 
 #Preview {

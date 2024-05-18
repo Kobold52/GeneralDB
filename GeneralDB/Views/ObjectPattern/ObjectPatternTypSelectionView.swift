@@ -13,16 +13,18 @@ struct ObjectPatternTypSelectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text("Genre")
-                Picker("", selection: $objectPattern.genre) {
-                    ForEach(ObjectType.allCases) { genre in
-                        Text(genre.descr).tag(genre)
+                if objectPattern.genre == ObjectType.unkown {
+                    Text("Genre")
+                    Picker("", selection: $objectPattern.genre) {
+                        ForEach(ObjectType.allCases) { genre in
+                            Text(genre.descr).tag(genre)
+                        }
                     }
+                    .disabled(objectPattern.genre != ObjectType.unkown)
+                    .border(.selection)
+                    Spacer()
                 }
-                .disabled(objectPattern.genre != ObjectType.unkown)
-                .border(.selection)
-                
-                Spacer()
+               
                 
                 Text("Status")
                 Picker("", selection: $objectPattern.status) {
@@ -30,6 +32,7 @@ struct ObjectPatternTypSelectionView: View {
                         Text(status.descr).tag(status)
                     }
                 }
+                .frame(width: 200)
                 .border(.selection)
             }
         }

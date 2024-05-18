@@ -44,10 +44,9 @@ struct AddAttributPatternToObjejectPatternScreen: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading) {
-                
-                Text("Liste aller Attributmuster")
-                    .font(.title)
-                    .bold()
+            
+                Text("Bitte aus der oberen Liste auswählen")
+                    .font(.title2)
                 SearchbarView(searchText: $searchText)
                 
                 List {
@@ -56,7 +55,7 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                             .onTapGesture {
                                 attribute.append(item)
                             }
-//  Für Debug-Zwecke
+//                            Debugging
 //                            .onLongPressGesture {
 //                                print(item.name)
 //                                print(item.genre.descr)
@@ -92,6 +91,11 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                     Button("zuweisen") {
                         attribute.forEach { attr in
                             let attribut = AttributPattern(attributPattern: attr)
+//                          Debugging
+                            print(attribut.name)
+                            print(attribut.genre.descr)
+                            print(attribut.prompt)
+                            print(attribut.unit)
                             objectPattern.attributs.append( attribut)
                         }
                         dismiss()
@@ -113,6 +117,8 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                         .stroke(Color.black, lineWidth: 2)
                 }
             }
+            .navigationTitle("\(objectPattern.name) Attribute zuweisen")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
@@ -129,7 +135,6 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                     })
                 }
             }
-            .navigationTitle("Object \(objectPattern.name)")
             .padding()
         }
     }

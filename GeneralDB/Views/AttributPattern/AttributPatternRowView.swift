@@ -14,13 +14,16 @@ struct AttributPatternRowView: View {
     @Bindable var object: AttributPattern
     
     let col = [
-        300,
-        100,
         200,
+        70,
+        350,
         100
     ]
     
     var values: [GridValue] = []
+    var versioniert: String {
+        return object.tracked ? "binoculars" : ""
+    }
 
     var body: some View {
         ScrollView(.horizontal) {
@@ -34,7 +37,7 @@ struct AttributPatternRowView: View {
             GridValue(value: attribut.genre.descr),
             GridValue(value: Unit().getValue(value: 0.0, unit: object.unit, symbol: true)),
             GridValue(value: attribut.prompt),
-            GridValue(value: "binoculars", displayType: .image)
+            GridValue(value: versioniert, displayType: .image)
         ]
     }
 }

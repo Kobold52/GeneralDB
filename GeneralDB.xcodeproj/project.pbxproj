@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD4D6A832BF4D518007BD001 /* EditAttributPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */; };
 		FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */; };
 		FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */; };
 		FD6D3EF62BECFC5000D8D8F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6D3EF52BECFC5000D8D8F7 /* Assets.xcassets */; };
@@ -31,10 +32,11 @@
 		FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */; };
 		FD6D3F322BEFA17800D8D8F7 /* BootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */; };
 		FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */; };
-		FDABD1B62BF4C336004544D3 /* AttributPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B52BF4C336004544D3 /* AttributPatternView.swift */; };
+		FDABD1B62BF4C336004544D3 /* AttributPatternPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAttributPatternScreen.swift; sourceTree = "<group>"; };
 		FD6D3EEE2BECFC4D00D8D8F7 /* GeneralDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeneralDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDBApp.swift; sourceTree = "<group>"; };
 		FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,7 +63,7 @@
 		FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRowView.swift; sourceTree = "<group>"; };
 		FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampView.swift; sourceTree = "<group>"; };
 		FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttributPatternToObjejectPatternScreen.swift; sourceTree = "<group>"; };
-		FDABD1B52BF4C336004544D3 /* AttributPatternView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternView.swift; sourceTree = "<group>"; };
+		FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternPromptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				FD6D3F0F2BED146600D8D8F7 /* EditObjectPatternScreen.swift */,
 				FD6D3F152BEE29C300D8D8F7 /* AttributPatternListScreen.swift */,
 				FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */,
+				FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -181,7 +184,7 @@
 			children = (
 				FD6D3F1A2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift */,
 				FD6D3F242BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift */,
-				FDABD1B52BF4C336004544D3 /* AttributPatternView.swift */,
+				FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */,
 			);
 			path = AttributPattern;
 			sourceTree = "<group>";
@@ -279,10 +282,11 @@
 				FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */,
 				FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */,
 				FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */,
+				FD4D6A832BF4D518007BD001 /* EditAttributPatternScreen.swift in Sources */,
 				FD6D3F102BED146600D8D8F7 /* EditObjectPatternScreen.swift in Sources */,
 				FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */,
 				FD6D3F322BEFA17800D8D8F7 /* BootcampView.swift in Sources */,
-				FDABD1B62BF4C336004544D3 /* AttributPatternView.swift in Sources */,
+				FDABD1B62BF4C336004544D3 /* AttributPatternPromptView.swift in Sources */,
 				FD6D3F0D2BED122A00D8D8F7 /* ObjectPatternListScreen.swift in Sources */,
 				FD6D3F052BED016500D8D8F7 /* ObjectEnums.swift in Sources */,
 				FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */,

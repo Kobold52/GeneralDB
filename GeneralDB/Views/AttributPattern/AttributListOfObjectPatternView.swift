@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AttributListOfObjectPatternView: View {
     @Environment(\.modelContext) var modelContext
@@ -13,12 +14,21 @@ struct AttributListOfObjectPatternView: View {
     @Bindable var objectPattern: ObjectPattern
     @Binding var navigationPath: NavigationPath
     
+    @State private var showDeleteDialog = false
+    
+//    @Query var attributs: [AttributPattern]
+    
+//    init(objectPattern: ObjectPattern, navigationPath: NavigationPath) {
+//        _attributs = Query(filter: #Predicate<AttributPattern> { attr in
+//            attr.objectPattern == objectPattern
+//        }, sort: \AttributPattern.name)
+//    }
+    
     // Definition of table with 4 columns
-    // Titels
     let columns: [Int] = [
         200,    // Spalte 1
-        100,    // Spalte 2
-        200,
+        70,    // Spalte 2
+        350,
         100
     ]
     
@@ -40,23 +50,21 @@ struct AttributListOfObjectPatternView: View {
                 
                 GridRowView(col: columns, values: titels)
                     .padding(.leading)
-                    .font(.title2)
-                
-                ForEach(objectPattern.attributs) { attribut in
-                    AttributPatternRowView(object: attribut)
-                        .padding(.leading)
-                        .onTapGesture {
-                            navigationPath.append(attribut)
-                        }
+                    .fontWeight(.bold)
+                    .border(Color.black)
+                List {
+                    ForEach(objectPattern.attributs) { attribut in        //, editActions: .move
+                        AttributPatternRowView(object: attribut)
+                            .padding(.leading)
+                            .onTapGesture {
+                                /// to EditAttributPatternScreen
+                                navigationPath.append(attribut)
+                            }
+                    }
+//                    .onMove(perform: move)
                 }
-                .onDelete(perform: deleteAttributPattern )
-                
-                .border(Color.black)
-                
             }
         }
-        .border(Color.black)
-        
     }
     
     func deleteAttributPattern(at offsets: IndexSet) {
@@ -65,6 +73,11 @@ struct AttributListOfObjectPatternView: View {
             modelContext.delete(object)
         }
     }
+    
+//    func move(from source: IndexSet, to destination: Int) {
+//        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
+//        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
+//    }
 }
 
 #Preview {

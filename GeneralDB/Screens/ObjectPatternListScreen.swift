@@ -26,7 +26,7 @@ struct ObjectPatternListScreen: View {
                     EditObjectPatternScreen(objectPattern: obj, navigationPath: $path)
                 }
                 .navigationDestination(for: AttributPattern.self) { attribut in
-                    AttributPatternRowView(object: attribut)
+                    EditAttributPatternScreen(attribut: attribut)
                 }
                 .toolbar {
                     Button("Add ObjectPattern", systemImage: "plus.circle", action: addObjectPattern)

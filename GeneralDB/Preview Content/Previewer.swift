@@ -23,7 +23,7 @@ struct Previewer {
         container = try ModelContainer(for: ObjectPattern.self, configurations: config)
         
         objectPattern = ObjectPattern(name: "Transformator", genre: .Equipment, status: .inProgress, summary: "Beschreibung des Objektes")
-        attributPattern = AttributPattern(name: "Electric Power", prompt: "Prompt", genre: .ElectricPower, dataTyp: .Number, unit: "UnitElectricPower.kiloWatt")
+        attributPattern = AttributPattern(name: "Electric Power", prompt: "Prompt", genre: .ElectricPower, dataTyp: .Number, unit: "UnitElectricPower.kiloWatt", objectPattern: objectPattern)
         
         container.mainContext.insert(attributPattern)
 

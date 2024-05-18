@@ -15,18 +15,20 @@ class AttributPattern {
     var genre: AttributGenre
     var dataTyp: AttributDataType
     var unit: String
+    var help: String = ""
     var tracked: Bool = false
     var created: Date = Date.now
     var changed: Date?
     var objectPattern: ObjectPattern?
         
-    init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String,
+    init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, help: String = "",
          tracked: Bool = false, changed: Date? = nil, objectPattern: ObjectPattern? = nil) {
         self.name = name
         self.prompt = prompt
         self.genre = genre
         self.dataTyp = dataTyp
         self.unit = unit
+        self.help = help
         self.tracked = tracked
         self.created = Date.now
 //        self.changed = changed
@@ -39,10 +41,15 @@ class AttributPattern {
         self.genre = attributPattern.genre
         self.dataTyp = attributPattern.dataTyp
         self.unit = attributPattern.unit
+        self.help = attributPattern.help
         self.tracked = attributPattern.tracked
         self.created = Date.now
 //        self.changed = attributPattern.changed
         self.objectPattern = attributPattern.objectPattern
+    }
+    
+    @Transient var hasUnit: Bool {
+        return self.unit.isEmpty ? false : true
     }
 
 }

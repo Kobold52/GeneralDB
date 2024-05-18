@@ -43,7 +43,7 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
         case .ElectricResistance:
             "Electric Resistance"
         case .ElectricPotentialDifference:
-            "Electric Potential Difference"
+            "Electric Voltage"
         case .Energy:
             "Energy"
         case .Frequency:
@@ -139,7 +139,7 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
 }
 
 enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
-    case unkown, Text, Integer, Number, Date, URL, File
+    case unkown, Text, Integer, Number, Date, Picker, URL, File
     
     var id: Self {
         self
@@ -157,10 +157,12 @@ enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
             "Number"
         case .Date:
             "Date"
-        case .File:
-            "File"
+        case .Picker:
+            "Picker"
         case .URL:
             "URL"
+        case .File:
+            "File"
         }
     }
 }
