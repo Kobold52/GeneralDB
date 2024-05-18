@@ -15,6 +15,7 @@ struct EditAttributPatternScreen: View {
     @Bindable var attribut: AttributPattern
     
     @FocusState private var focusField: FocusField?
+    var objectName: String = ""
     
     enum FocusField {
         case prompt, unit, help, tracker
@@ -25,7 +26,7 @@ struct EditAttributPatternScreen: View {
             VStack(alignment: .leading) {
                 /// Screen titel
                 HStack {
-                    Text(attribut.objectPattern!.name)
+                    Text(objectName)
                     //                attribut.objectPattern!.genreIcon
                     Text("spezification of property \(attribut.name)")
                 }
@@ -136,6 +137,10 @@ struct EditAttributPatternScreen: View {
             }
         }
         .onAppear() {
+            guard let objectName = attribut.objectPattern?.name else {
+                return
+            }
+
             focusField = .prompt
         }
     }

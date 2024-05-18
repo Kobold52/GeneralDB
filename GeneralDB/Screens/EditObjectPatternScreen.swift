@@ -39,9 +39,6 @@ struct EditObjectPatternScreen: View {
                 .font(.title2.bold())
             
             AttributListOfObjectPatternView(objectPattern: objectPattern, navigationPath: $navigationPath)
-                .toolbar {
-                    EditButton()
-                }
                 .border(Color.black)
             
         }
