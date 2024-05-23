@@ -14,7 +14,7 @@ class ObjectPattern {
     var genre: ObjectType
     var status: ObjectStatus
     var summary: String
-    var attributs = [AttributPattern]()
+    @Relationship(deleteRule: .cascade, inverse: \AttributPattern.objectPattern) var attributs = [AttributPattern]()
     
     init(name: String, genre: ObjectType, status: ObjectStatus, summary: String, attributs: [AttributPattern] = [AttributPattern]()) {
         self.name = name

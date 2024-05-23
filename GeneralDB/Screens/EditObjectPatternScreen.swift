@@ -36,10 +36,13 @@ struct EditObjectPatternScreen: View {
                     showAttributSelectDialog = true
                 }
             }
-                .font(.title2.bold())
+            .font(.title2.bold())
             
             AttributListOfObjectPatternView(objectPattern: objectPattern, navigationPath: $navigationPath)
                 .border(Color.black)
+//                .toolbar {
+//                    EditButton()
+//                }
             
         }
         .sheet(isPresented: $showAttributSelectDialog) {

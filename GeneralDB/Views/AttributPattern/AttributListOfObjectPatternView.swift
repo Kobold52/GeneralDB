@@ -16,14 +16,26 @@ struct AttributListOfObjectPatternView: View {
     
     @State private var showDeleteDialog = false
     
-//    @Query var attributs: [AttributPattern]
+    @Query var attributs: [AttributPattern]
+    
+    var sortedAttributs: [AttributPattern] {
+        objectPattern.attributs.sorted {
+            $0.name < $1.name
+        }
+    }
+    
+    var masterDatas: [AttributPattern] {
+        objectPattern.attributs.filter {
+            $0.group == .masterData
+        }
+    }
     
 //    init(objectPattern: ObjectPattern, navigationPath: NavigationPath) {
 //        _attributs = Query(filter: #Predicate<AttributPattern> { attr in
-//            attr.objectPattern == objectPattern
+//            attr.objectPattern?.name == objectPattern.name
 //        }, sort: \AttributPattern.name)
 //    }
-    
+//    
     // Definition of table with 4 columns
     let columns: [Int] = [
         200,    // Spalte 1
@@ -53,7 +65,7 @@ struct AttributListOfObjectPatternView: View {
                     .fontWeight(.bold)
                     .border(Color.black)
                 List {
-                    ForEach(objectPattern.attributs) { attribut in        //, editActions: .move
+                    ForEach(sortedAttributs) { attribut in        //, editActions: .move
                         AttributPatternRowView(object: attribut)
                             .padding(.leading)
                             .onTapGesture {
@@ -61,32 +73,34 @@ struct AttributListOfObjectPatternView: View {
                                 navigationPath.append(attribut)
                             }
                     }
-//                    .onMove(perform: move)
+                    .onMove(perform: move)
                 }
             }
         }
     }
     
-    func deleteAttributPattern(at offsets: IndexSet) {
-        for offset in offsets {
-            let object = objectPattern.attributs[offset]
-            modelContext.delete(object)
+
+    
+    func deleteAttributPattern(_ indexSet: IndexSet) {
+        for index in indexSet {
+            let attribut = sortedAttributs[index]
+            modelContext.delete(attribut)
         }
     }
     
-//    func move(from source: IndexSet, to destination: Int) {
-//        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
-//        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
-//    }
-}
-
-#Preview {
-    do {
-        let previewer = try Previewer()
-        
-        return AttributListOfObjectPatternView(objectPattern: previewer.objectPattern, navigationPath: .constant(NavigationPath()))
-            .modelContainer(previewer.container)
-    } catch {
-        fatalError("big Problem")
+    func move(from source: IndexSet, to destination: Int) {
+        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
+        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
     }
 }
+
+//#Preview {
+//    do {
+//        let previewer = try Previewer()
+//        
+//        return AttributListOfObjectPatternView(objectPattern: previewer.objectPattern, navigationPath: .constant(NavigationPath())
+//            .modelContainer(previewer.container)
+//    } catch {
+//        fatalError("big Problem")
+//    }
+//}

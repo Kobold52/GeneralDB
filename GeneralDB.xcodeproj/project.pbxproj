@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FD4D6A832BF4D518007BD001 /* EditAttributPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */; };
+		FD4D6A852BFCEB88007BD001 /* HelpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A842BFCEB88007BD001 /* HelpTextView.swift */; };
+		FD4D6A872BFF6DB5007BD001 /* CustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A862BFF6DB5007BD001 /* CustomToggleStyle.swift */; };
 		FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */; };
 		FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */; };
 		FD6D3EF62BECFC5000D8D8F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6D3EF52BECFC5000D8D8F7 /* Assets.xcassets */; };
@@ -30,13 +32,14 @@
 		FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */; };
 		FD6D3F2E2BEF8A1500D8D8F7 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2D2BEF8A1500D8D8F7 /* Previewer.swift */; };
 		FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */; };
-		FD6D3F322BEFA17800D8D8F7 /* BootcampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */; };
 		FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */; };
 		FDABD1B62BF4C336004544D3 /* AttributPatternPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAttributPatternScreen.swift; sourceTree = "<group>"; };
+		FD4D6A842BFCEB88007BD001 /* HelpTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTextView.swift; sourceTree = "<group>"; };
+		FD4D6A862BFF6DB5007BD001 /* CustomToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleStyle.swift; sourceTree = "<group>"; };
 		FD6D3EEE2BECFC4D00D8D8F7 /* GeneralDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeneralDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDBApp.swift; sourceTree = "<group>"; };
 		FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,7 +64,6 @@
 		FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		FD6D3F2D2BEF8A1500D8D8F7 /* Previewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previewer.swift; sourceTree = "<group>"; };
 		FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRowView.swift; sourceTree = "<group>"; };
-		FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootcampView.swift; sourceTree = "<group>"; };
 		FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttributPatternToObjejectPatternScreen.swift; sourceTree = "<group>"; };
 		FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternPromptView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,7 +196,8 @@
 			children = (
 				FD6D3F2B2BEF6FE000D8D8F7 /* SearchbarView.swift */,
 				FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */,
-				FD6D3F312BEFA17800D8D8F7 /* BootcampView.swift */,
+				FD4D6A842BFCEB88007BD001 /* HelpTextView.swift */,
+				FD4D6A862BFF6DB5007BD001 /* CustomToggleStyle.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -285,13 +288,14 @@
 				FD4D6A832BF4D518007BD001 /* EditAttributPatternScreen.swift in Sources */,
 				FD6D3F102BED146600D8D8F7 /* EditObjectPatternScreen.swift in Sources */,
 				FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */,
-				FD6D3F322BEFA17800D8D8F7 /* BootcampView.swift in Sources */,
 				FDABD1B62BF4C336004544D3 /* AttributPatternPromptView.swift in Sources */,
 				FD6D3F0D2BED122A00D8D8F7 /* ObjectPatternListScreen.swift in Sources */,
 				FD6D3F052BED016500D8D8F7 /* ObjectEnums.swift in Sources */,
 				FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */,
 				FD6D3F192BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift in Sources */,
 				FD6D3F072BED0B7A00D8D8F7 /* AttributPattern.swift in Sources */,
+				FD4D6A872BFF6DB5007BD001 /* CustomToggleStyle.swift in Sources */,
+				FD4D6A852BFCEB88007BD001 /* HelpTextView.swift in Sources */,
 				FD6D3F2E2BEF8A1500D8D8F7 /* Previewer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

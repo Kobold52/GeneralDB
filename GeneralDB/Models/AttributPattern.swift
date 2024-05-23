@@ -19,11 +19,13 @@ class AttributPattern {
     var tracked: Bool = false
     var created: Date = Date.now
     var changed: Date?
+    var group: DatasheetCategory = DatasheetCategory.undefind
+    var selection: String = ""
+    var tags: String = ""
     var objectPattern: ObjectPattern?
         
-    init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, help: String = "",
-         tracked: Bool = false, changed: Date? = nil, objectPattern: ObjectPattern? = nil) {
-        self.name = name
+    init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, help: String = "", tracked: Bool = false, changed: Date? = nil, group: DatasheetCategory = .undefind, objectPattern: ObjectPattern? = nil) {
+        self.name = genre.descr
         self.prompt = prompt
         self.genre = genre
         self.dataTyp = dataTyp
@@ -32,6 +34,7 @@ class AttributPattern {
         self.tracked = tracked
         self.created = Date.now
 //        self.changed = changed
+        self.group = group
         self.objectPattern = objectPattern
     }
     
@@ -45,6 +48,9 @@ class AttributPattern {
         self.tracked = attributPattern.tracked
         self.created = Date.now
 //        self.changed = attributPattern.changed
+        self.group = attributPattern.group
+        self.selection = attributPattern.selection
+        self.tags = attributPattern.tags
         self.objectPattern = attributPattern.objectPattern
     }
     

@@ -28,7 +28,6 @@ struct AttributPatternRowView: View {
     var body: some View {
         ScrollView(.horizontal) {
             GridRowView(col: col, values: prepareTable(attribut: object))
-//            Text(getString())
         }
      }
     

@@ -13,16 +13,20 @@ struct AttributPatternListScreen: View {
     
     @State var path = NavigationPath()
     
-    @Query(sort: \AttributPattern.name) private var objects: [AttributPattern]
+//    @Query(sort: \AttributPattern.name) private var objects: [AttributPattern]
+    
+    @Query(filter: #Predicate<AttributPattern> { attr in
+        attr.objectPattern == nil
+    }, sort: \AttributPattern.name) private var objects: [AttributPattern]
     
     @State private var showNewAttributPatternScreen: Bool = false
 
     var body: some View {
         NavigationStack {
-//            Group {
-//                if objects.isEmpty {
-//                    ContentUnavailableView("Load all attribut pattern", systemImage: "gearshape.2.fill")
-//                } else {
+            Group {
+                if objects.isEmpty {
+                    ContentUnavailableView("Load all attribut pattern", systemImage: "gearshape.2.fill")
+                } else {
                     List {
                         ForEach(objects) { object in
                             AttributPatternRowView(object: object)
@@ -31,7 +35,7 @@ struct AttributPatternListScreen: View {
                     }
                     .listStyle(InsetListStyle())
                     .scrollContentBackground(.hidden)
-//                }
+                }
 
             }
             .frame(width: 600)
@@ -39,16 +43,16 @@ struct AttributPatternListScreen: View {
             
             .navigationTitle("Attribut Pattern List")
             .toolbar {
-                if objects.isEmpty {
+//                if objects.isEmpty {
                     Button {
                         createAttributPatternList()
                     } label: {
                         Text("Create Pattern")
                     }
-                }
+//                }
             }
             
-//        }
+        }
     }
     
     func createAttributPatternList() {

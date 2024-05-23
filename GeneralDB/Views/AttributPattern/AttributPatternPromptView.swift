@@ -8,24 +8,35 @@
 import SwiftUI
 
 struct AttributPatternPromptView: View {
+    
     @Bindable var attribut: AttributPattern
 
-    
-    
     var body: some View {
-        /// UI Prompt
         HStack(alignment: .bottom) {
-            Text("\(attribut.name) in")
+            Text(attribut.name)
             Text(Unit().getValue(value: 0.0, unit: attribut.unit, symbol: true))
                 .padding(.horizontal)
                 .bold()
             
             VStack(alignment: .leading) {
-                Text("Was soll im UI bei der Abfrageangezeigt werden?")
-
+                VStack(alignment: .leading, spacing: 0) {
+                    Text("Witch prompt should be indicated in the query?")
+                        .italic().bold()
+                    HStack {
+                        Text("In which Datasheet category")
+                        Picker("", selection: $attribut.group) {
+                            ForEach(DatasheetCategory.allCases, id: \.id) { group in
+                                Text(group.descr).tag(group)
+                            }
+                        }
+                    }
+                    .italic().bold()
+                }
                 TextField("", text: $attribut.prompt)
+                    .padding(.horizontal)
                     .border(Color.black)
             }
+            
         }
     }
 }

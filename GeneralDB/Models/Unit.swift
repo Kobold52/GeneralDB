@@ -27,6 +27,10 @@ class UnitElectricPower: Dimension {
     static let watt = UnitElectricPower(symbol: "W", converter: UnitConverterLinear(coefficient: 1.0))
     static let kiloWatt = UnitElectricPower(symbol: "kW", converter: UnitConverterLinear(coefficient: 1000.0))
     static let megaWatt = UnitElectricPower(symbol: "MW", converter: UnitConverterLinear(coefficient: 1000000.0))
+    static let voltAmpere = UnitElectricPower(symbol: "VA", converter: UnitConverterLinear(coefficient: 1.0))
+    static let kiloVoltAmpere = UnitElectricPower(symbol: "kVA", converter: UnitConverterLinear(coefficient: 1000.0))
+    static let megaVoltAmpere = UnitElectricPower(symbol: "MVA", converter: UnitConverterLinear(coefficient: 1000000.0))
+
 
     static let baseUnit = UnitElectricPower.kiloWatt
 }
@@ -38,6 +42,12 @@ class UnitElectricEnergy: Dimension {
     static let megaWattHour = UnitElectricEnergy(symbol: "MWh", converter: UnitConverterLinear(coefficient: 1000000.0))
 
     static let baseUnit = UnitElectricEnergy.kiloWattHour
+}
+
+class UnitPeace: Dimension {
+    static let peace = UnitPeace(symbol: "pcs", converter: UnitConverterLinear(coefficient: 1.0))
+   
+    static let baseUnit = UnitPeace.peace
 }
 
 
@@ -267,9 +277,6 @@ struct Unit: Hashable, Codable {
         "UnitTemperature.celsius",
         "UnitTemperature.fahrenheit",
 
-
-        
-
         //MARK: Volume
         "UnitVolume.megaliters",
         "UnitVolume.kiloliters",
@@ -303,21 +310,26 @@ struct Unit: Hashable, Codable {
         "UnitVolume.imperialGallons",
         "UnitVolume.metricCups",
         
-        //MARK: Custum
+        // MARK: Custum Units
         // MARK: ElectricPower
         "UnitElectricPower.watt",
         "UnitElectricPower.kiloWatt",
         "UnitElectricPower.megaWatt",
+        "UnitElectricPower.voltAmpere",
+        "UnitElectricPower.kiloVoltAmpere",
+        "UnitElectricPower.megaVoltAmpere",
         
         // MARK: ElectricEnergy
         "UnitElectricEnergy.wattHour",
         "UnitElectricEnergy.kiloWattHour",
         "UnitElectricEnergy.megaWattHour",
         
-        
         //MARK: VolumePower
         "UnitVolumePower.cubicMeterPerHour",
-        "UnitVolumePower.litersPerHour"
+        "UnitVolumePower.litersPerHour",
+        
+        //MARK: Peace
+        "UnitPeace.peace"
   
 
     
@@ -397,6 +409,33 @@ struct Unit: Hashable, Codable {
                 return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
             }
 
+        case "UnitElectricPower.voltAmpere":
+            let newValue = Measurement(value: value, unit: UnitElectricPower.voltAmpere)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+            
+        case "UnitElectricPower.kiloVoltAmpere":
+            let newValue = Measurement(value: value, unit: UnitElectricPower.kiloVoltAmpere)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+            
+        case "UnitElectricPower.megaVoltAmpere":
+            let newValue = Measurement(value: value, unit: UnitElectricPower.megaVoltAmpere)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+
+
+
+            
             
             // MARK: Volume power
         case "UnitVolumePower.cubicMeterPerHour":
@@ -625,6 +664,14 @@ struct Unit: Hashable, Codable {
             }
 
         //MARK: UnitDuration
+        case "UnitDuration.days":
+            let newValue = Measurement(value: value, unit: UnitDuration.hours)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+            
         case "UnitDuration.hours":
             let newValue = Measurement(value: value, unit: UnitDuration.hours)
             if symbol {

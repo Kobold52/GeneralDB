@@ -7,8 +7,9 @@
 
 import Foundation
 
+/// Genre der Abfrage der Eigenschaft
 enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
-    case unkown, Aceleration, Angle, Area, Charge, ConcentrationMass, Dispersion, Duration, ElectricCharge, ElectricCurrent, ElectricEnergy, ElectricPower, ElectricPotentialDifference, ElectricResistance, Energy, Frequency, FuelEfficiency, Information, InformationStorage, Length, Illuminance, Mass, Power, Pressure, Speed, Temperature, Volume, VolumePower
+    case unkown, GeneralText, GeneralDate, GenberalData, GenralURL, GeneralSelection, Aceleration, Angle, Area, Charge, ConcentrationMass, Dispersion, Duration, ElectricCharge, ElectricCurrent, ElectricEnergy, ElectricPower, ElectricPotentialDifference, ElectricResistance, Energy, Frequency, FuelEfficiency, InformationStorage, Length, Illuminance, Mass, Power, Pressure, Speed, Temperature, Volume, VolumePower, Peace
 
     var id: Self {
         self
@@ -52,8 +53,16 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "Fuel Efficiency"
         case .Illuminance:
             "Illuminance"
-        case .Information:
-            "Information"
+        case .GeneralText:
+            "Any Text"
+        case .GeneralDate:
+            "Any Date"
+        case .GenberalData:
+            "Any Data"
+        case .GenralURL:
+            "Any URL"
+        case .GeneralSelection:
+            "Any Selection"
         case .InformationStorage:
             "Information Storage"
         case .Length:
@@ -72,6 +81,9 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "Volumne"
         case .VolumePower:
             "Volumn Power"
+        case .Peace:
+            "Piece"
+  
         }
     }
     
@@ -113,8 +125,16 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "UnitFuelEfficiency"
         case .Illuminance:
             "UnitIlluminance"
-        case .Information:
-            "Information"
+        case .GeneralText:
+            "AnyText"
+        case .GeneralDate:
+            "AnyDate"
+        case .GenberalData:
+            "AnyData"
+        case .GenralURL:
+            "AnyURL"
+        case .GeneralSelection:
+            "AnySelection"
         case .InformationStorage:
             "UnitInformationStorage"
         case .Length:
@@ -133,11 +153,14 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "UnitVolumne"
         case .VolumePower:
             "UnitVolumnPower"
+        case .Peace:
+            "Peace"
         
         }
     }
 }
 
+/// Datentyp, der bei der Eingabe gefordert wird
 enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
     case unkown, Text, Integer, Number, Date, Picker, URL, File
     
@@ -166,5 +189,46 @@ enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
         }
     }
 }
+
+/// Gruppierung der Attribute
+enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
+    case undefind, masterData, operationalData, commercialData, maintenanceData
+    
+    var id: Self {
+        self
+    }
+
+    var descr: String {
+        switch self {
+        case .masterData:
+            return "Masterdata"
+        case .commercialData:
+            return "Comercial"
+        case .operationalData:
+            return "Operational"
+        case .maintenanceData:
+            return "Maintenance"
+        case .undefind:
+            return "?"
+        }
+    }
+
+    var longDescription : String {
+        switch self {
+        case .masterData:
+            return "Contains basic information about the object, such as manufacturer, model number and serial number."
+        case .operationalData:
+            return "Contains information about the operation of the object, such as operating hours, operating parameters and performance data."
+        case .commercialData:
+            return "Contains commercial information such as acquisition costs, warranty information and depreciation details."
+        case .maintenanceData:
+            return "Contains information on the maintenance of the device, such as maintenance logs, maintenance intervals and repairs carried out."
+        case .undefind:
+            return "undefined"
+        }
+    }
+}
+
+
 
 
