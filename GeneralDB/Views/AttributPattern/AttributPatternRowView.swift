@@ -22,7 +22,7 @@ struct AttributPatternRowView: View {
     
     var values: [GridValue] = []
     var versioniert: String {
-        return object.tracked ? "binoculars" : ""
+        return object.tracked ? "bell" : "bell.slash"
     }
 
     var body: some View {

@@ -29,14 +29,8 @@ struct AttributListOfObjectPatternView: View {
             $0.group == .masterData
         }
     }
-    
-//    init(objectPattern: ObjectPattern, navigationPath: NavigationPath) {
-//        _attributs = Query(filter: #Predicate<AttributPattern> { attr in
-//            attr.objectPattern?.name == objectPattern.name
-//        }, sort: \AttributPattern.name)
-//    }
-//    
-    // Definition of table with 4 columns
+
+    // Definition of Grid with 4 columns
     let columns: [Int] = [
         200,    // Spalte 1
         70,    // Spalte 2

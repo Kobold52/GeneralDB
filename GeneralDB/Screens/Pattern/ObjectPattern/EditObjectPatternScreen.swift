@@ -40,10 +40,6 @@ struct EditObjectPatternScreen: View {
             
             AttributListOfObjectPatternView(objectPattern: objectPattern, navigationPath: $navigationPath)
                 .border(Color.black)
-//                .toolbar {
-//                    EditButton()
-//                }
-            
         }
         .sheet(isPresented: $showAttributSelectDialog) {
             AddAttributPatternToObjejectPatternScreen(objectPattern: objectPattern)

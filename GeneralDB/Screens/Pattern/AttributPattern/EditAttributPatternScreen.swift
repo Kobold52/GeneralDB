@@ -20,7 +20,7 @@ struct EditAttributPatternScreen: View {
     }
     
     enum FocusField {
-        case prompt, unit, helpText, tracker, tags
+        case prompt, unit, helpText, tracker, tags, selection
     }
     
     var body: some View {
@@ -32,7 +32,6 @@ struct EditAttributPatternScreen: View {
                 Text("Spezification of property \(attribut.name)")
             }
             .font(.title2.bold())
-            
             
             /// UI Prompt
             HStack(alignment: .bottom) {
@@ -47,9 +46,11 @@ struct EditAttributPatternScreen: View {
                             Text(group.descr).tag(group)
                         }
                     }
+                    .italic().bold()
                     
                     Text("Witch prompt should be indicated for input")
-                    TextField("", text: $attribut.prompt)
+                        .italic().bold()
+                    TextField("which prompt", text: $attribut.prompt)
                         .focused($focusField, equals: .prompt)
                         .padding(.leading,2)
                         .border(Color.black)
@@ -58,7 +59,7 @@ struct EditAttributPatternScreen: View {
                             focusField = .helpText
                         }
                 }
-                .italic().bold()
+                
                 
             }
             
@@ -97,7 +98,7 @@ struct EditAttributPatternScreen: View {
                         .italic().fontWeight(.heavy)
                     
                 }
-                TextField("", text: $attribut.help, axis: .vertical)
+                TextField("helpfuly hint", text: $attribut.help, axis: .vertical)
                     .padding(.leading,2)
                     .focused($focusField, equals: .helpText)
                     .background(focusField == .helpText ? .blue.opacity(0.3) : .gray.opacity(0.3))
@@ -113,13 +114,17 @@ struct EditAttributPatternScreen: View {
                 Text("For datamanagement is helpful to create TAGs")
                     .italic().bold()
                   
-                TextField("", text: $attribut.tags, axis: .vertical)
+                TextField("TAG for data management", text: $attribut.tags, axis: .vertical)
                     .padding(.leading,2)
                     .focused($focusField, equals: .tags)
                     .background(focusField == .tags ? .blue.opacity(0.3) : .gray.opacity(0.3))
                     .border(Color.black)
                     .onSubmit {
-                        focusField = .prompt
+                        if attribut.genre == .GeneralSelection {
+                            focusField = .selection
+                        } else {
+                            focusField = .prompt
+                        }
                     }
             }
             
@@ -133,11 +138,27 @@ struct EditAttributPatternScreen: View {
             if !attribut.hasUnit {
                 Text("The property is not determined by a given physical unit, so that further questions need to be answered\n")
                     .italic().bold()
+                    .padding(.bottom,20)
                 /// Möglichkeit einer Abfrage mit vorgegebenen Antworten
-                //
-                ///
-                ///
+                if attribut.genre == .GeneralSelection {
+                    VStack(alignment: .leading) {
+                        Text("Indicated genre is general selection, please define all cases")
+                            .italic().bold()
+                        TextField("cases", text: $attribut.selection, axis: .vertical)
+                            .padding(.leading,2)
+                            .focused($focusField, equals: .selection)
+                            .background(focusField == .selection ? .blue.opacity(0.3) : .gray.opacity(0.3))
+                            .border(Color.black)
+                            .onSubmit {
+                                // check the input is ok
+                                focusField = .prompt
+                            }
+                        
+                    }
+                }
+
                 /// Möglichkeit Bilder aus der Fotobibliothek auszuwählen bzw. mit der Kamera zu schießen
+            
                 /// ....
                 
             }

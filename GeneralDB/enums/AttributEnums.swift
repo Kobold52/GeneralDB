@@ -9,7 +9,39 @@ import Foundation
 
 /// Genre der Abfrage der Eigenschaft
 enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
-    case unkown, GeneralText, GeneralDate, GenberalData, GenralURL, GeneralSelection, Aceleration, Angle, Area, Charge, ConcentrationMass, Dispersion, Duration, ElectricCharge, ElectricCurrent, ElectricEnergy, ElectricPower, ElectricPotentialDifference, ElectricResistance, Energy, Frequency, FuelEfficiency, InformationStorage, Length, Illuminance, Mass, Power, Pressure, Speed, Temperature, Volume, VolumePower, Peace
+    case unkown = 0
+    case GeneralText = 1
+    case GeneralDate = 2
+    case GeneralData = 3
+    case GeneralURL = 4
+    case GeneralSelection = 5
+    case Aceleration = 6
+    case Angle = 7
+    case Area = 8
+    case Charge = 9
+    case ConcentrationMass = 10
+    case Dispersion = 11
+    case Duration = 12
+    case ElectricCharge = 13
+    case ElectricCurrent = 14
+    case ElectricEnergy = 15
+    case ElectricPower = 16
+    case ElectricPotentialDifference = 17
+    case ElectricResistance = 18
+    case Energy = 19
+    case Frequency = 20
+    case FuelEfficiency = 21
+    case InformationStorage = 22
+    case Length = 23
+    case Illuminance = 24
+    case Mass = 25
+    case Power = 26
+    case Pressure = 27
+    case Speed = 28
+    case Temperature = 29
+    case Volume = 30
+    case VolumePower = 31
+    case Peace = 32
 
     var id: Self {
         self
@@ -57,9 +89,9 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "Any Text"
         case .GeneralDate:
             "Any Date"
-        case .GenberalData:
+        case .GeneralData:
             "Any Data"
-        case .GenralURL:
+        case .GeneralURL:
             "Any URL"
         case .GeneralSelection:
             "Any Selection"
@@ -129,9 +161,9 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "AnyText"
         case .GeneralDate:
             "AnyDate"
-        case .GenberalData:
+        case .GeneralData:
             "AnyData"
-        case .GenralURL:
+        case .GeneralURL:
             "AnyURL"
         case .GeneralSelection:
             "AnySelection"
@@ -162,7 +194,14 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
 
 /// Datentyp, der bei der Eingabe gefordert wird
 enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
-    case unkown, Text, Integer, Number, Date, Picker, URL, File
+    case unkown = 0
+    case Text = 1
+    case Integer = 2
+    case Number = 3
+    case Date = 4
+    case Picker = 5
+    case URL = 6
+    case File = 7
     
     var id: Self {
         self
@@ -192,7 +231,11 @@ enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
 
 /// Gruppierung der Attribute
 enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
-    case undefind, masterData, operationalData, commercialData, maintenanceData
+    case undefind = 0
+    case masterData = 1
+    case operationalData = 2
+    case commercialData = 3
+    case maintenanceData = 4
     
     var id: Self {
         self

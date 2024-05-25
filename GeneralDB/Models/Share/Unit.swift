@@ -383,7 +383,8 @@ struct Unit: Hashable, Codable {
                 return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
             }
 
-            
+            // MARK: Custum Units
+
             // MARK: Electrical Power
         case "UnitElectricPower.watt":
             let newValue = Measurement(value: value, unit: UnitElectricPower.watt)
@@ -433,9 +434,6 @@ struct Unit: Hashable, Codable {
                 return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
             }
 
-
-
-            
             
             // MARK: Volume power
         case "UnitVolumePower.cubicMeterPerHour":
@@ -2108,6 +2106,19 @@ struct Unit: Hashable, Codable {
             } else {
                 return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
             }
+            
+            
+        case "UnitPeace.peace":
+            let newValue = Measurement(value: value, unit: UnitPeace.peace)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+
+        // MARK: Custum Units
+        // MARK: ElectricPower
+
 
         default:
             return "..."

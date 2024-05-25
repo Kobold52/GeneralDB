@@ -41,8 +41,8 @@ extension AttributPattern {
 //            AttributPattern without physical unit
             AttributPattern(name: "Text", prompt: "?", genre: .GeneralText, dataTyp: .Text, unit: "", group: .undefind),
             AttributPattern(name: "Date", prompt: "?", genre: .GeneralDate, dataTyp: .Date, unit: "", group: .undefind),
-            AttributPattern(name: "File", prompt: "?", genre: .GenberalData, dataTyp: .File, unit: "", group: .undefind),
-            AttributPattern(name: "URL", prompt: "?", genre: .GenralURL, dataTyp: .URL, unit: "", group: .undefind),
+            AttributPattern(name: "File", prompt: "?", genre: .GeneralData, dataTyp: .File, unit: "", group: .undefind),
+            AttributPattern(name: "URL", prompt: "?", genre: .GeneralURL, dataTyp: .URL, unit: "", group: .undefind),
             AttributPattern(name: "Selection", prompt: "?", genre: .GeneralSelection, dataTyp: .Picker, unit: "", group: .undefind)
             
             

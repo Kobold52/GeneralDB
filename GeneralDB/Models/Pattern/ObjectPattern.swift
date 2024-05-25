@@ -14,6 +14,7 @@ class ObjectPattern {
     var genre: ObjectType
     var status: ObjectStatus
     var summary: String
+    var version: String = "0.0.0"
     @Relationship(deleteRule: .cascade, inverse: \AttributPattern.objectPattern) var attributs = [AttributPattern]()
     
     init(name: String, genre: ObjectType, status: ObjectStatus, summary: String, attributs: [AttributPattern] = [AttributPattern]()) {
@@ -82,4 +83,11 @@ class ObjectPattern {
 }
 
 
-
+// JSON
+struct CodableObjectPattern: Codable {
+    var name: String
+    var genre: ObjectType
+    var status: ObjectStatus
+    var summary: String
+    var codableAttributPattern: [CodableAttributPattern]
+}

@@ -62,41 +62,38 @@ class AttributPattern {
 
 
 
-//extension AttributPattern {
-//    
-//    func createAttributPatternList(db: ModelContext) {
-//        print("-- \(AttributPattern.attributPatternSamples.count)")
-//        /*
-//        ForEach(AttributPattern.attributPatternSamples) { obj in
-//            let newObj = AttributPattern(obj: obj)
-//            // db.insert(newObj)
-//           
-//             let newObject = ObjectPattern(name: name, summery: "", genre: genre)
-//             newObject.created = Date.now
-//             dataContext.insert(newObject)
-//            
-//        }  */
-//    }
-//}
+// JSON
+struct CodableAttributPattern: Codable {
+    var name: String = ""
+    var prompt: String = "?"
+    var genre: AttributGenre.RawValue
+    var dataTyp: AttributDataType.RawValue
+    var unit: String
+    var help: String = ""
+    var tracked: Bool = false
+    var created: Date = Date.now
+    var changed: Date?
+    var group: DatasheetCategory.RawValue
+    var selection: String = ""
+    var tags: String = ""
+    var codableObjectPattern: CodableObjectPattern?
+}
 
-//struct CodableAttributPattern: Codable {
-//    var dbID: UUID?
-//    var name: String = ""
-//    var genre: AttributGenre.RawValue
-//    var created: Date = Date.now
-//    var changed: Date? = nil
-//    var dataTyp: AttributDataType.RawValue
-//    var unit: String
-//}
-//
-//extension CodableAttributPattern {
-//    init(object: AttributPattern) {
-//        self.name = object.name
-//        self.genre = object.genre
-//        self.dataTyp = object.dataTyp
-//        self.unit = object.unit
-//        self.created = object.created
-//        self.changed = object.changed
-//    }
-//}
-//
+extension CodableAttributPattern {
+    init(object: CodableAttributPattern) {
+        self.name = object.name
+        self.prompt = object.prompt
+        self.genre = object.genre
+        self.dataTyp = object.dataTyp
+        self.unit = object.unit
+        self.help = object.help
+        self.tracked = object.tracked
+        self.created = object.created
+        self.changed = object.changed
+        self.group = object.group
+        self.selection = object.selection
+        self.tags = object.tags
+        self.codableObjectPattern = object.codableObjectPattern
+    }
+}
+
