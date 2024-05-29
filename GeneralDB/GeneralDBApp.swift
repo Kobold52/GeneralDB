@@ -13,7 +13,7 @@ struct GeneralDBApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [ObjectPattern.self, AttributPattern.self])
+        .modelContainer(for: [ObjectPattern.self, AttributPattern.self, PitObject.self, PitAttribut.self, PitAttributValue.self])
     }
     
     init() {

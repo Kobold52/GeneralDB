@@ -14,19 +14,44 @@ struct AttributListOfObjectPatternView: View {
     @Bindable var objectPattern: ObjectPattern
     @Binding var navigationPath: NavigationPath
     
-    @State private var showDeleteDialog = false
+    @State private var category: DatasheetCategory = .undefind
     
-    @Query var attributs: [AttributPattern]
-    
-    var sortedAttributs: [AttributPattern] {
-        objectPattern.attributs.sorted {
-            $0.name < $1.name
-        }
-    }
-    
-    var masterDatas: [AttributPattern] {
-        objectPattern.attributs.filter {
-            $0.group == .masterData
+    var attributListed: [AttributPattern] {
+        switch category {
+        case .undefind:
+            objectPattern.attributs.sorted {
+                $0.name < $1.name
+            }
+        case .masterData:
+            objectPattern.attributs.filter {
+                $0.group == .masterData
+            }.sorted {
+                $0.name < $1.name
+            }
+        case .operationalData:
+            objectPattern.attributs.filter {
+                $0.group == .operationalData
+            }.sorted {
+                $0.name < $1.name
+            }
+        case .commercialData:
+            objectPattern.attributs.filter {
+                $0.group == .commercialData
+            }.sorted {
+                $0.name < $1.name
+            }
+        case .maintenanceData:
+            objectPattern.attributs.filter {
+                $0.group == .maintenanceData
+            }.sorted {
+                $0.name < $1.name
+            }
+        case .testing:
+            objectPattern.attributs.filter {
+                $0.group == .testing
+            }.sorted {
+                $0.name < $1.name
+            }
         }
     }
 
@@ -53,13 +78,22 @@ struct AttributListOfObjectPatternView: View {
             if objectPattern.attributs.isEmpty {
                 ContentUnavailableView("Enter your first attribut for object pattern.", systemImage: "gearshape.2.fill")
             } else {
-                
+                    Picker("Category:", selection: $category) {
+                        ForEach(DatasheetCategory.allCases, id: \.id) { group in
+                            Text(group.descr).tag(group)
+                                .foregroundStyle(.blue)
+                                .bold()
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    
+
                 GridRowView(col: columns, values: titels)
                     .padding(.leading)
                     .fontWeight(.bold)
                     .border(Color.black)
                 List {
-                    ForEach(sortedAttributs) { attribut in        //, editActions: .move
+                    ForEach(attributListed) { attribut in
                         AttributPatternRowView(object: attribut)
                             .padding(.leading)
                             .onTapGesture {
@@ -67,25 +101,26 @@ struct AttributListOfObjectPatternView: View {
                                 navigationPath.append(attribut)
                             }
                     }
-                    .onMove(perform: move)
+//                    .onMove(perform: move)
                 }
             }
         }
+        
     }
     
 
     
-    func deleteAttributPattern(_ indexSet: IndexSet) {
-        for index in indexSet {
-            let attribut = sortedAttributs[index]
-            modelContext.delete(attribut)
-        }
-    }
-    
-    func move(from source: IndexSet, to destination: Int) {
-        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
-        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
-    }
+//    func deleteAttributPattern(_ indexSet: IndexSet) {
+//        for index in indexSet {
+//            let attribut = sortedAttributs[index]
+//            modelContext.delete(attribut)
+//        }
+//    }
+//    
+//    func move(from source: IndexSet, to destination: Int) {
+//        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
+//        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
+//    }
 }
 
 //#Preview {

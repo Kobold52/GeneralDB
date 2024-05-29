@@ -25,7 +25,13 @@ enum ObjectStatus: Int, Codable, Identifiable, CaseIterable {
 }
 
 enum ObjectType: Int, Codable, Identifiable, CaseIterable {
-    case unkown, Area, Construction, Company, Contract, Equipment, Person
+    case unkown = 0
+    case Area = 1
+    case Construction = 2
+    case Company = 3
+    case Contract = 4
+    case Equipment = 5
+    case Person = 6
     
     var id: Self {
         self

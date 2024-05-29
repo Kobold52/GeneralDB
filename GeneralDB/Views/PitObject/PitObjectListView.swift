@@ -6,13 +6,55 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PitObjectListView: View {
+    @Environment(\.modelContext) var modelContent
+
+    @Query var pitObjects: [PitObject]
+    
+    @State private var showPatternSelectView = false
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(pitObjects) { pitObj in
+                NavigationLink(value: pitObj) {
+                    PitObjectRowView(pitObject: pitObj)
+                }
+            }
+            .onDelete(perform: deletePitObject)
+        }
+        .sheet(isPresented: $showPatternSelectView, content: {
+            CreatePitObjectFromPattern()
+        })
+        .toolbar() {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    showPatternSelectView = true
+                } label: {
+                    Image(systemName: "plus.circle")
+                }
+
+            }
+        }
+        .onAppear() {
+            print("PitObjectListView: Anzahl pitObjects \(pitObjects.count)")
+            print("Name: \(pitObjects[0].sourceName)")
+        }
     }
+    
+    func deletePitObject(at offsets: IndexSet) {
+        for offset in offsets {
+            let object = pitObjects[offset]
+            modelContent.delete(object)
+        }
+    }
+ 
 }
 
-#Preview {
-    PitObjectListView()
-}
+
+
+
+//#Preview {
+//    PitObjectListView()
+//}

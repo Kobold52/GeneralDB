@@ -21,6 +21,7 @@ class PitAttribut {
     var selection: String = ""
     var tags: String = ""
     var pitObject: PitObject?
+    var pitValues: [PitAttributValue] = []
     
     init(pattern: AttributPattern) {
         self.name = pattern.name

@@ -236,6 +236,7 @@ enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
     case operationalData = 2
     case commercialData = 3
     case maintenanceData = 4
+    case testing = 5
     
     var id: Self {
         self
@@ -251,8 +252,10 @@ enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
             return "Operational"
         case .maintenanceData:
             return "Maintenance"
+        case .testing:
+            return "Testing"
         case .undefind:
-            return "?"
+            return "alle"
         }
     }
 
@@ -266,6 +269,8 @@ enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
             return "Contains commercial information such as acquisition costs, warranty information and depreciation details."
         case .maintenanceData:
             return "Contains information on the maintenance of the device, such as maintenance logs, maintenance intervals and repairs carried out."
+        case .testing:
+            return "Contains information about testing"
         case .undefind:
             return "undefined"
         }

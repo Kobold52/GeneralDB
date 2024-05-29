@@ -11,7 +11,9 @@ import SwiftUI
 
 
 struct ContentView: View {
+    /// NavigationStack for ObjectPattern and AttributPattern
     @State private var path1 = NavigationPath()
+    /// NavigtionStack for PitObject and ...
     @State private var path2 = NavigationPath()
     
     var body: some View {
@@ -36,9 +38,8 @@ struct ContentView: View {
             NavigationStack(path: $path2) {
                 PitObjectListScreen()
                     .navigationDestination(for: PitObject.self) { obj in
-                        EditPitObjectScreen()
+                        EditPitObjectScreen(pitObject: obj, navigationPath: $path2)
                     }
-
             }
             .tabItem {
                 Label("PitObject", systemImage: "square.3.layers.3d.down.left")

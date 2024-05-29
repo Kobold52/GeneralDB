@@ -15,6 +15,8 @@
 		FD4D6A942C01F078007BD001 /* PitObjectListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A932C01F078007BD001 /* PitObjectListScreen.swift */; };
 		FD4D6AB22C023D82007BD001 /* EditPitObjectScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6AB12C023D82007BD001 /* EditPitObjectScreen.swift */; };
 		FD4D6AB52C023FC0007BD001 /* PitObjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6AB42C023FC0007BD001 /* PitObjectListView.swift */; };
+		FD4D6AB72C033797007BD001 /* PitObjectRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6AB62C033797007BD001 /* PitObjectRowView.swift */; };
+		FD4D6AB92C033CE3007BD001 /* CreatePitObjectFromPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6AB82C033CE3007BD001 /* CreatePitObjectFromPattern.swift */; };
 		FD6D3EF22BECFC4D00D8D8F7 /* GeneralDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */; };
 		FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */; };
 		FD6D3EF62BECFC5000D8D8F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD6D3EF52BECFC5000D8D8F7 /* Assets.xcassets */; };
@@ -39,6 +41,9 @@
 		FD6D3F302BEFA0DC00D8D8F7 /* GridRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */; };
 		FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */; };
 		FDABD1B62BF4C336004544D3 /* AttributPatternPromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */; };
+		FDD0E65C2C06268100A0E4C0 /* PitAttributListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E65B2C06268100A0E4C0 /* PitAttributListView.swift */; };
+		FDD0E65E2C076CA100A0E4C0 /* PitAttributEditValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E65D2C076CA100A0E4C0 /* PitAttributEditValueView.swift */; };
+		FDD0E6602C076FD700A0E4C0 /* PitAttributValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E65F2C076FD700A0E4C0 /* PitAttributValue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +55,8 @@
 		FD4D6A932C01F078007BD001 /* PitObjectListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitObjectListScreen.swift; sourceTree = "<group>"; };
 		FD4D6AB12C023D82007BD001 /* EditPitObjectScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPitObjectScreen.swift; sourceTree = "<group>"; };
 		FD4D6AB42C023FC0007BD001 /* PitObjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitObjectListView.swift; sourceTree = "<group>"; };
+		FD4D6AB62C033797007BD001 /* PitObjectRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitObjectRowView.swift; sourceTree = "<group>"; };
+		FD4D6AB82C033CE3007BD001 /* CreatePitObjectFromPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePitObjectFromPattern.swift; sourceTree = "<group>"; };
 		FD6D3EEE2BECFC4D00D8D8F7 /* GeneralDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeneralDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6D3EF12BECFC4D00D8D8F7 /* GeneralDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralDBApp.swift; sourceTree = "<group>"; };
 		FD6D3EF32BECFC4D00D8D8F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +83,9 @@
 		FD6D3F2F2BEFA0DC00D8D8F7 /* GridRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridRowView.swift; sourceTree = "<group>"; };
 		FDABD1B32BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAttributPatternToObjejectPatternScreen.swift; sourceTree = "<group>"; };
 		FDABD1B52BF4C336004544D3 /* AttributPatternPromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributPatternPromptView.swift; sourceTree = "<group>"; };
+		FDD0E65B2C06268100A0E4C0 /* PitAttributListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitAttributListView.swift; sourceTree = "<group>"; };
+		FDD0E65D2C076CA100A0E4C0 /* PitAttributEditValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitAttributEditValueView.swift; sourceTree = "<group>"; };
+		FDD0E65F2C076FD700A0E4C0 /* PitAttributValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitAttributValue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,7 @@
 			children = (
 				FD4D6A882C01E727007BD001 /* PitObject.swift */,
 				FD4D6A8A2C01E96A007BD001 /* PitAttribut.swift */,
+				FDD0E65F2C076FD700A0E4C0 /* PitAttributValue.swift */,
 			);
 			path = RealObject;
 			sourceTree = "<group>";
@@ -148,6 +159,7 @@
 			children = (
 				FD4D6A932C01F078007BD001 /* PitObjectListScreen.swift */,
 				FD4D6AB12C023D82007BD001 /* EditPitObjectScreen.swift */,
+				FD4D6AB82C033CE3007BD001 /* CreatePitObjectFromPattern.swift */,
 			);
 			path = PitObject;
 			sourceTree = "<group>";
@@ -156,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FD4D6AB42C023FC0007BD001 /* PitObjectListView.swift */,
+				FD4D6AB62C033797007BD001 /* PitObjectRowView.swift */,
 			);
 			path = PitObject;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 		FD6D3F0B2BED119400D8D8F7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FDD0E65A2C06265C00A0E4C0 /* PitAttribut */,
 				FD4D6AB32C023F9F007BD001 /* PitObject */,
 				FD6D3F232BEE3D7B00D8D8F7 /* AttributPattern */,
 				FD6D3F222BEE3D0A00D8D8F7 /* ObjectPattern */,
@@ -279,6 +293,15 @@
 				FD4D6A862BFF6DB5007BD001 /* CustomToggleStyle.swift */,
 			);
 			path = Share;
+			sourceTree = "<group>";
+		};
+		FDD0E65A2C06265C00A0E4C0 /* PitAttribut */ = {
+			isa = PBXGroup;
+			children = (
+				FDD0E65B2C06268100A0E4C0 /* PitAttributListView.swift */,
+				FDD0E65D2C076CA100A0E4C0 /* PitAttributEditValueView.swift */,
+			);
+			path = PitAttribut;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,14 +382,19 @@
 				FD4D6AB22C023D82007BD001 /* EditPitObjectScreen.swift in Sources */,
 				FD6D3F1D2BEE2E6F00D8D8F7 /* Unit.swift in Sources */,
 				FD6D3F252BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift in Sources */,
+				FDD0E65C2C06268100A0E4C0 /* PitAttributListView.swift in Sources */,
+				FDD0E65E2C076CA100A0E4C0 /* PitAttributEditValueView.swift in Sources */,
 				FD6D3F022BECFF2000D8D8F7 /* ObjectPattern.swift in Sources */,
 				FD4D6AB52C023FC0007BD001 /* PitObjectListView.swift in Sources */,
+				FD4D6AB92C033CE3007BD001 /* CreatePitObjectFromPattern.swift in Sources */,
+				FDD0E6602C076FD700A0E4C0 /* PitAttributValue.swift in Sources */,
 				FD6D3F212BEE3C3500D8D8F7 /* ObjectPatternMasterDataView.swift in Sources */,
 				FD6D3F092BED0E5100D8D8F7 /* AttributEnums.swift in Sources */,
 				FD6D3F122BED1A2D00D8D8F7 /* ObjectPatternRowView.swift in Sources */,
 				FD6D3EF42BECFC4D00D8D8F7 /* ContentView.swift in Sources */,
 				FDABD1B42BF4BA3D004544D3 /* AddAttributPatternToObjejectPatternScreen.swift in Sources */,
 				FD6D3F2C2BEF6FE000D8D8F7 /* SearchbarView.swift in Sources */,
+				FD4D6AB72C033797007BD001 /* PitObjectRowView.swift in Sources */,
 				FD4D6A832BF4D518007BD001 /* EditAttributPatternScreen.swift in Sources */,
 				FD6D3F102BED146600D8D8F7 /* EditObjectPatternScreen.swift in Sources */,
 				FD4D6A942C01F078007BD001 /* PitObjectListScreen.swift in Sources */,
