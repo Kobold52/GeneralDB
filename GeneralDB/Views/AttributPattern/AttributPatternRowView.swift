@@ -9,35 +9,27 @@ import SwiftUI
 import SwiftData
 
 struct AttributPatternRowView: View {
-    @Environment(\.modelContext) var modelContent
-    
-    @Bindable var object: AttributPattern
-    
-    let col = [
-        200,
-        70,
-        350,
-        100
-    ]
-    
-    var values: [GridValue] = []
-    var versioniert: String {
-        return object.tracked ? "bell" : "bell.slash"
-    }
 
+    @Bindable var attribut: AttributPattern
+    
+    var versioniert: String {
+        return attribut.tracked ? "bell" : "bell.slash"
+    }
+    
     var body: some View {
         ScrollView(.horizontal) {
-            GridRowView(col: col, values: prepareTable(attribut: object))
+            HStack {
+                Text(attribut.genre.descr)
+                    .frame(width: 200, alignment: .leading)
+                Text(Unit().getValue(value: 0.0, unit: attribut.unit, symbol: true))
+                    .frame(width: 70, alignment: .leading)
+                Text(attribut.prompt)
+                    .frame(width: 300, alignment: .leading)
+                Image(systemName: versioniert)
+                    .frame(width: 100, alignment: .leading)
+            }
         }
-     }
-    
-    func prepareTable(attribut: AttributPattern) -> [GridValue] {
-        return [
-            GridValue(value: attribut.genre.descr),
-            GridValue(value: Unit().getValue(value: 0.0, unit: object.unit, symbol: true)),
-            GridValue(value: attribut.prompt),
-            GridValue(value: versioniert, displayType: .image)
-        ]
+        
     }
 }
 
@@ -45,7 +37,7 @@ struct AttributPatternRowView: View {
     do {
         let previewer = try Previewer()
         
-        return AttributPatternRowView(object: previewer.attributPattern)
+        return AttributPatternRowView(attribut: previewer.attributPattern)
             .modelContainer(previewer.container)
     } catch {
         fatalError("big Problem")

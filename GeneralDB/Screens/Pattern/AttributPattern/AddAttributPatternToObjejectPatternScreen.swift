@@ -73,7 +73,7 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                 /// Sourcelist of AttributsPattern
                 List {
                     ForEach(filteredObjectList) { item in
-                        AttributPatternRowView(object: item)
+                        AttributPatternRowView(attribut: item)
                             .onTapGesture {
                                 attribute.append(item)
                             }
@@ -116,7 +116,7 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                 /// List of assigned properties
                 List {
                     ForEach(attribute) { attr in
-                        AttributPatternRowView(object: attr)
+                        AttributPatternRowView(attribut: attr)
                         //                            .onTapGesture {
                         //                                attribute.delete(attr)
                         //                            }

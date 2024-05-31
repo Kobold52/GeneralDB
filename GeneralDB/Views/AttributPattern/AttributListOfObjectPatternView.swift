@@ -54,30 +54,14 @@ struct AttributListOfObjectPatternView: View {
             }
         }
     }
-
-    // Definition of Grid with 4 columns
-    let columns: [Int] = [
-        200,    // Spalte 1
-        70,    // Spalte 2
-        350,
-        100
-    ]
-    
-    let titels: [GridValue] = [
-        GridValue(value: "Genre"),
-        GridValue(value: "Unit"),
-        GridValue(value: "Prompt"),
-        GridValue(value: "tracked")
-    ]
-    
-    var values: [GridValue] = []
-    
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             if objectPattern.attributs.isEmpty {
                 ContentUnavailableView("Enter your first attribut for object pattern.", systemImage: "gearshape.2.fill")
             } else {
+                HStack {
+                    Text("Filter:")
                     Picker("Category:", selection: $category) {
                         ForEach(DatasheetCategory.allCases, id: \.id) { group in
                             Text(group.descr).tag(group)
@@ -86,47 +70,57 @@ struct AttributListOfObjectPatternView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    
-
-                GridRowView(col: columns, values: titels)
-                    .padding(.leading)
-                    .fontWeight(.bold)
-                    .border(Color.black)
+                }
+                .padding(.leading)
+                .background(Color.blue.opacity(0.2))
+                .border(Color.black)
+                
+                HStack {
+                    Text("Genre")
+                        .frame(width: 200, alignment: .leading)
+                    Text("Unit")
+                        .frame(width: 70, alignment: .leading)
+                    Text("Prompt")
+                        .frame(width: 300, alignment: .leading)
+                    Text("tracked")
+                        .frame(width: 100, alignment: .leading)
+                }
+                .padding(.leading)
+                .fontWeight(.bold)
+              
                 List {
                     ForEach(attributListed) { attribut in
-                        AttributPatternRowView(object: attribut)
+                        AttributPatternRowView(attribut: attribut)
                             .padding(.leading)
                             .onTapGesture {
                                 /// to EditAttributPatternScreen
                                 navigationPath.append(attribut)
                             }
                     }
-//                    .onMove(perform: move)
                 }
             }
         }
-        
     }
     
-
     
-//    func deleteAttributPattern(_ indexSet: IndexSet) {
-//        for index in indexSet {
-//            let attribut = sortedAttributs[index]
-//            modelContext.delete(attribut)
-//        }
-//    }
-//    
-//    func move(from source: IndexSet, to destination: Int) {
-//        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
-//        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
-//    }
+    
+    //    func deleteAttributPattern(_ indexSet: IndexSet) {
+    //        for index in indexSet {
+    //            let attribut = sortedAttributs[index]
+    //            modelContext.delete(attribut)
+    //        }
+    //    }
+    //
+    //    func move(from source: IndexSet, to destination: Int) {
+    //        // Aktualisiere die Positionen der Elemente im Array basierend auf der Drag-and-Drop-Aktion
+    //        objectPattern.attributs.move(fromOffsets: source, toOffset: destination)
+    //    }
 }
 
 //#Preview {
 //    do {
 //        let previewer = try Previewer()
-//        
+//
 //        return AttributListOfObjectPatternView(objectPattern: previewer.objectPattern, navigationPath: .constant(NavigationPath())
 //            .modelContainer(previewer.container)
 //    } catch {

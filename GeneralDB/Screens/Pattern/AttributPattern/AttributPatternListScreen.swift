@@ -29,7 +29,7 @@ struct AttributPatternListScreen: View {
                 } else {
                     List {
                         ForEach(objects) { object in
-                            AttributPatternRowView(object: object)
+                            AttributPatternRowView(attribut: object)
                         }
                         .listRowBackground(Color.gray.opacity(0.5))
                     }

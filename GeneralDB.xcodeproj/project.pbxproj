@@ -44,6 +44,7 @@
 		FDD0E65C2C06268100A0E4C0 /* PitAttributListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E65B2C06268100A0E4C0 /* PitAttributListView.swift */; };
 		FDD0E65E2C076CA100A0E4C0 /* PitAttributEditValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E65D2C076CA100A0E4C0 /* PitAttributEditValueView.swift */; };
 		FDD0E6602C076FD700A0E4C0 /* PitAttributValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E65F2C076FD700A0E4C0 /* PitAttributValue.swift */; };
+		FDD0E6622C08998A00A0E4C0 /* Unit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD0E6612C08998A00A0E4C0 /* Unit+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		FDD0E65B2C06268100A0E4C0 /* PitAttributListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitAttributListView.swift; sourceTree = "<group>"; };
 		FDD0E65D2C076CA100A0E4C0 /* PitAttributEditValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitAttributEditValueView.swift; sourceTree = "<group>"; };
 		FDD0E65F2C076FD700A0E4C0 /* PitAttributValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitAttributValue.swift; sourceTree = "<group>"; };
+		FDD0E6612C08998A00A0E4C0 /* Unit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Unit+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6D3F182BEE2B4B00D8D8F7 /* AttributPattern+Extensions.swift */,
+				FDD0E6612C08998A00A0E4C0 /* Unit+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				FD4D6A852BFCEB88007BD001 /* HelpTextView.swift in Sources */,
 				FD4D6A8B2C01E96A007BD001 /* PitAttribut.swift in Sources */,
 				FD6D3F2E2BEF8A1500D8D8F7 /* Previewer.swift in Sources */,
+				FDD0E6622C08998A00A0E4C0 /* Unit+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

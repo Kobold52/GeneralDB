@@ -42,6 +42,8 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
     case Volume = 30
     case VolumePower = 31
     case Peace = 32
+    case Currency = 33
+    case Percent = 34
 
     var id: Self {
         self
@@ -116,6 +118,10 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
         case .Peace:
             "Piece"
   
+        case .Currency:
+            "Currency"
+        case .Percent:
+            "Percent"
         }
     }
     
@@ -188,6 +194,10 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
         case .Peace:
             "Peace"
         
+        case .Currency:
+            "Currency"
+        case .Percent:
+            "Percent"
         }
     }
 }

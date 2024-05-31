@@ -16,7 +16,8 @@ struct PitAttributListView: View {
     @Bindable var pitObject: PitObject
     @Binding var navigationPath: NavigationPath
 
-    var attributListed: [PitAttribut] {
+    ///
+    var attributs: [PitAttribut] {
         
         switch category {
         case .undefind:
@@ -56,60 +57,63 @@ struct PitAttributListView: View {
         }
     }
     
-   
-    /// Definition of Grid with 4 columns
-    let columns: [Int] = [
-        350,    // Spalte 1
-        70,     // Spalte 2
-        200,
-        100
-    ]
-    
-    let titels: [GridValue] = [
-        GridValue(value: "What"),
-        GridValue(value: "Unit"),
-        GridValue(value: "Input"),
-        GridValue(value: "tracked")
-    ]
-    
-    var values: [GridValue] = []
-    
     var body: some View {
         VStack {
             HStack {
                 Text("Filter:")
-                Picker(selection: $category) {
+                Picker("", selection: $category) {
                     ForEach(DatasheetCategory.allCases, id: \.id) { group in
                         Text(group.descr).tag(group)
+                            .italic()
                     }
-                } label: {
-                    Text("Kategorie")
                 }
                 .pickerStyle(SegmentedPickerStyle())
             }
-            /// Titel
-            GridRowView(col: columns, values: titels)
-                .padding(.leading)
-                .fontWeight(.bold)
-                .border(Color.black)
+            .padding(.horizontal, 2)
+            .background(Color.blue.opacity(0.2))
+            .border(Color.black)
+
+            HStack {
+                Text("Which property")
+                    .frame(width: 350, alignment: .leading)
+                Text("Unit")
+                    .frame(width: 70, alignment: .leading)
+                Text("Input")
+                    .frame(width: 200, alignment: .leading)
+//                Text("Datatype")
+                    .frame(width: 100, alignment: .leading)
+                Spacer()
+            }
+            .fontWeight(.bold)
+            .padding(.leading)
+            .background(Color.gray.opacity(0.3))
+//            .border(Color.black)
+            
             List {
-                ForEach(attributListed) { attr in
+                ForEach(attributs) { attr in
                     HStack {
                         Text(attr.prompt)
+                            .lineLimit(1)
                             .frame(width: 350, alignment: .leading)
                         Text(Unit().getValue(value: 0.0, unit: attr.unit, symbol: true))
                             .frame(width: 70, alignment: .leading)
                         PitAttributEditValueView(pitAttribut: attr, navigationPath: $navigationPath)
                             .frame(width: 200, alignment: .leading)
                             .padding(2)
-                            .background(Color.blue.opacity(0.3))
+                            .background(Color.blue.opacity(0.1))
                             .border(Color.black)
-                        Text(attr.dataTyp.descr)
-                            .frame(width: 100, alignment: .leading)
+//                        Text(attr.dataTyp.descr)
+//                            .frame(width: 100, alignment: .leading)
+                        Spacer()
                     }
+                    .padding(.leading)
                 }
+                
             }
+            
         }
+        .padding(.bottom)
+        .border(Color.black)
     }
     
 }

@@ -38,6 +38,7 @@ struct PitAttributEditValueView: View {
             ), displayedComponents: .date
             )
             .datePickerStyle(CompactDatePickerStyle())
+       
         case .Integer:
             TextField("", text: Binding(
                 get: { pitValue.valueInteger.map { String($0) } ?? "" },
@@ -62,16 +63,18 @@ struct PitAttributEditValueView: View {
         case .Picker:
             /// First: Daten für Picker bereitstellen in pickerValues
             ///
-            let pickerValues = ["1.Wert", "2.Wert", "3.Wert"]
             Picker("", selection: Binding(
-                get: { pitValue.valueText ?? pickerValues.first! },
-                set: { pitValue.valueText = $0 }
+                get: { pitValue.valueText ?? "" },
+                set: { 
+                    pitValue.valueText = $0
+                }
             )) {
-                ForEach(pickerValues, id: \.self) { value in
+                ForEach(pitAttribut.selection.components(separatedBy: "|"), id: \.self) { value in
                     Text("\(value)").tag(value)
                 }
             }
             .pickerStyle(MenuPickerStyle())
+
         case .URL:
             TextField("", text: Binding(
                 get: { pitValue.valueURL ?? "" },

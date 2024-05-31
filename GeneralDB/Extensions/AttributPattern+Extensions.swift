@@ -38,7 +38,11 @@ extension AttributPattern {
             AttributPattern(name: "Volume", prompt: "?", genre: .Volume, dataTyp: .Number, unit: "UnitVolume.cubicMeters", group: .undefind),
             AttributPattern(name: "Volume per hour", prompt: "?", genre: .VolumePower, dataTyp: .Number, unit: "UnitVolumePower.cubicMeterPerHour", group: .undefind),
             AttributPattern(name: "Peace", prompt: "?", genre: .Peace, dataTyp: .Number, unit: "UnitPeace.peace", group: .undefind),
-//            AttributPattern without physical unit
+            AttributPattern(name: "Euro", prompt: "?", genre: .Currency, dataTyp: .Number, unit: "UnitCurrency.euro", group: .undefind),
+            AttributPattern(name: "Dollar", prompt: "?", genre: .Currency, dataTyp: .Number, unit: "UnitCurrency.dollar", group: .undefind),
+            AttributPattern(name: "Percent", prompt: "?", genre: .Percent, dataTyp: .Number, unit: "UnitPercent.percent", group: .undefind),
+
+            /// MARK: AttributPattern without physical unit, currency, ...
             AttributPattern(name: "Text", prompt: "?", genre: .GeneralText, dataTyp: .Text, unit: "", group: .undefind),
             AttributPattern(name: "Date", prompt: "?", genre: .GeneralDate, dataTyp: .Date, unit: "", group: .undefind),
             AttributPattern(name: "File", prompt: "?", genre: .GeneralData, dataTyp: .File, unit: "", group: .undefind),

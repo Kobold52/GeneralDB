@@ -37,10 +37,6 @@ struct PitObjectListView: View {
 
             }
         }
-        .onAppear() {
-            print("PitObjectListView: Anzahl pitObjects \(pitObjects.count)")
-            print("Name: \(pitObjects[0].sourceName)")
-        }
     }
     
     func deletePitObject(at offsets: IndexSet) {

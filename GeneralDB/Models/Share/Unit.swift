@@ -16,6 +16,7 @@ import UIKit
 //}
 
 
+
 class UnitVolumePower: Dimension {
     static let cubicMeterPerHour = UnitVolumePower(symbol: "m3/h", converter: UnitConverterLinear(coefficient: 1.0))
     static let litersPerHour = UnitVolumePower(symbol: "ltr/h", converter: UnitConverterLinear(coefficient: 0.001))
@@ -48,6 +49,19 @@ class UnitPeace: Dimension {
     static let peace = UnitPeace(symbol: "pcs", converter: UnitConverterLinear(coefficient: 1.0))
    
     static let baseUnit = UnitPeace.peace
+}
+
+class UnitPercent: Dimension {
+    static let percent = UnitPercent(symbol: "%", converter: UnitConverterLinear(coefficient: 1.0))
+   
+    static let baseUnit = UnitPercent.percent
+}
+
+class UnitCurrency: Dimension {
+    static let euro = UnitCurrency(symbol: "€", converter: UnitConverterLinear(coefficient: 1.0))
+    static let dollar = UnitCurrency(symbol: "$", converter: UnitConverterLinear(coefficient: 1.0))
+    
+    static let baseUnit = UnitCurrency.euro
 }
 
 
@@ -98,6 +112,8 @@ struct Unit: Hashable, Codable {
         "UnitDispersion.partsPerMillion",
         
         //MARK: UnitDuration
+        "UnitDuration.years",
+        "UnitDuration.days",
         "UnitDuration.hours",
         "UnitDuration.minutes",
         "UnitDuration.seconds",
@@ -329,9 +345,14 @@ struct Unit: Hashable, Codable {
         "UnitVolumePower.litersPerHour",
         
         //MARK: Peace
-        "UnitPeace.peace"
+        "UnitPeace.peace",
+        
+        // MARK: Percent
+        "UnitPercent.percent",
   
-
+        // MARK: Currency
+        "UnitCurrency.euro",
+        "UnitCurrency.dollar"
     
     ].sorted()
     
@@ -662,8 +683,15 @@ struct Unit: Hashable, Codable {
             }
 
         //MARK: UnitDuration
+        case "UnitDuration.years":
+            let newValue = Measurement(value: value, unit: UnitDuration.years)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
         case "UnitDuration.days":
-            let newValue = Measurement(value: value, unit: UnitDuration.hours)
+            let newValue = Measurement(value: value, unit: UnitDuration.days)
             if symbol {
                 return newValue.unit.symbol
             } else {
@@ -2117,6 +2145,31 @@ struct Unit: Hashable, Codable {
             }
 
         // MARK: Custum Units
+            
+        case "UnitCurrency.euro":
+            let newValue = Measurement(value: value, unit: UnitCurrency.euro)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+            
+        case "UnitCurrency.dollar":
+            let newValue = Measurement(value: value, unit: UnitCurrency.dollar)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+            
+        case "UnitPercent.percent":
+            let newValue = Measurement(value: value, unit: UnitPercent.percent)
+            if symbol {
+                return newValue.unit.symbol
+            } else {
+                return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
+            }
+            
         // MARK: ElectricPower
 
 
