@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class AttributPattern {
+    var id: UUID
     var name: String = ""
     var prompt: String = "?"
     var genre: AttributGenre
@@ -25,6 +26,7 @@ class AttributPattern {
     var objectPattern: ObjectPattern?
         
     init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, help: String = "", tracked: Bool = false, changed: Date? = nil, group: DatasheetCategory = .undefind, objectPattern: ObjectPattern? = nil) {
+        self.id = UUID()
         self.name = genre.descr
         self.prompt = prompt
         self.genre = genre
@@ -39,6 +41,7 @@ class AttributPattern {
     }
     
     init(attributPattern: AttributPattern) {
+        self.id = UUID()
         self.name = attributPattern.name
         self.prompt = attributPattern.prompt
         self.genre = attributPattern.genre

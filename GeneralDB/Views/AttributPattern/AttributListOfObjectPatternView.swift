@@ -76,14 +76,15 @@ struct AttributListOfObjectPatternView: View {
                 .border(Color.black)
                 
                 HStack {
-                    Text("Genre")
+                    Text("Attribut")
                         .frame(width: 200, alignment: .leading)
-                    Text("Unit")
+                    Text("Einheit")
                         .frame(width: 70, alignment: .leading)
-                    Text("Prompt")
+                    Text("Abfrage im Dialog")
                         .frame(width: 300, alignment: .leading)
-                    Text("tracked")
+                    Text("Eingabe versioniert")
                         .frame(width: 100, alignment: .leading)
+                        .lineLimit(1)
                 }
                 .padding(.leading)
                 .fontWeight(.bold)

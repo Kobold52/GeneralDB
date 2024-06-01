@@ -15,6 +15,8 @@ struct PitAttributListView: View {
     
     @Bindable var pitObject: PitObject
     @Binding var navigationPath: NavigationPath
+    
+    @FocusState private var isFocused: Bool
 
     ///
     var attributs: [PitAttribut] {
@@ -74,14 +76,14 @@ struct PitAttributListView: View {
             .border(Color.black)
 
             HStack {
-                Text("Which property")
+                Text("Eigenschaft")
                     .frame(width: 350, alignment: .leading)
-                Text("Unit")
+                Text("Einheit")
                     .frame(width: 70, alignment: .leading)
-                Text("Input")
+                Text("Wert/Angabe")
                     .frame(width: 200, alignment: .leading)
 //                Text("Datatype")
-                    .frame(width: 100, alignment: .leading)
+//                    .frame(width: 100, alignment: .leading)
                 Spacer()
             }
             .fontWeight(.bold)
@@ -91,6 +93,7 @@ struct PitAttributListView: View {
             
             List {
                 ForEach(attributs) { attr in
+                    let oldValue = attr.validValue
                     HStack {
                         Text(attr.prompt)
                             .lineLimit(1)
@@ -102,8 +105,16 @@ struct PitAttributListView: View {
                             .padding(2)
                             .background(Color.blue.opacity(0.1))
                             .border(Color.black)
-//                        Text(attr.dataTyp.descr)
-//                            .frame(width: 100, alignment: .leading)
+                            .onSubmit {
+                                if oldValue != nil && attr.tracked {
+                                    let value = PitAttributValue(pitAttributValue: oldValue!)
+//                                    value.predecessor = oldValue?.id
+                                    print(oldValue?.id ?? "NIL")
+                                    attr.pitValues.append(value)
+                                }
+                                print(oldValue ?? "nil")
+                                print("submit \(attr.prompt)")
+                            }
                         Spacer()
                     }
                     .padding(.leading)

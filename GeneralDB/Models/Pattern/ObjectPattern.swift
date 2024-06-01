@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class ObjectPattern {
+    var id: UUID
     var name: String
     var genre: ObjectType
     var status: ObjectStatus
@@ -18,6 +19,7 @@ class ObjectPattern {
     @Relationship(deleteRule: .cascade, inverse: \AttributPattern.objectPattern) var attributs = [AttributPattern]()
     
     init(name: String, genre: ObjectType, status: ObjectStatus, summary: String, attributs: [AttributPattern] = [AttributPattern]()) {
+        self.id = UUID()
         self.name = name
         self.genre = genre
         self.status = status
@@ -85,6 +87,7 @@ class ObjectPattern {
 
 // JSON
 struct CodableObjectPattern: Codable {
+    var id: UUID
     var name: String
     var genre: ObjectType
     var status: ObjectStatus

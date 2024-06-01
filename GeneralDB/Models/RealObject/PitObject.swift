@@ -11,6 +11,7 @@ import SwiftData
 
 @Model
 class PitObject {
+    var id: UUID
     var name: String = "tbd"
     var sourceName: String
     var sourceVersion: String
@@ -18,6 +19,7 @@ class PitObject {
     @Relationship(deleteRule: .cascade, inverse: \PitAttribut.pitObject) var attributs = [PitAttribut]()
     
     init(name: String, sourceName: String, sourceVersion: String, genre: ObjectType, attributs: [PitAttribut] = [PitAttribut]()) {
+        self.id = UUID()
         self.name = name
         self.sourceName = sourceName
         self.sourceVersion = sourceVersion
@@ -26,6 +28,7 @@ class PitObject {
     }
 
     init(pattern: ObjectPattern) {
+        self.id = UUID()
         self.sourceName = pattern.name
         self.sourceVersion = pattern.version
         self.genre = pattern.genre

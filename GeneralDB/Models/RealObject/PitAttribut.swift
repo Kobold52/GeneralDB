@@ -10,6 +10,7 @@ import SwiftData
 
 @Model
 class PitAttribut {
+    var id: UUID
     var name: String = ""
     var prompt: String = "?"
     var genre: AttributGenre
@@ -21,9 +22,11 @@ class PitAttribut {
     var selection: String = ""
     var tags: String = ""
     var pitObject: PitObject?
-    var pitValues: [PitAttributValue] = []
+    @Relationship(deleteRule: .cascade, inverse: \PitAttributValue.pitAttribut) var pitValues = [PitAttributValue]()
+    
     
     init(pattern: AttributPattern) {
+        self.id = UUID()
         self.name = pattern.name
         self.prompt = pattern.prompt
         self.genre = pattern.genre
@@ -34,6 +37,12 @@ class PitAttribut {
         self.group = pattern.group
         self.selection = pattern.selection
         self.tags = pattern.tags
+    }
+    
+    @Transient var validValue: PitAttributValue? {
+        return self.pitValues.filter {
+            $0.predecessor == nil
+        }.first
     }
 }
 
