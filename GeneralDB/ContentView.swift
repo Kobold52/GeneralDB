@@ -28,12 +28,12 @@ struct ContentView: View {
                     }
             }
             .tabItem {
-                Label("Pattern", systemImage: "folder.badge.gearshape")
+                Label("Objektmuster", systemImage: "folder.badge.gearshape")
             }
                 
             AttributPatternListScreen()
                 .tabItem {
-                    Label("Attributpattern", systemImage: "gear")
+                    Label("Eigenschaftsvorlagen", systemImage: "gear")
                 }
             NavigationStack(path: $path2) {
                 PitObjectListScreen()
@@ -42,7 +42,7 @@ struct ContentView: View {
                     }
             }
             .tabItem {
-                Label("PitObject", systemImage: "square.3.layers.3d.down.left")
+                Label("Reale Objekte", systemImage: "square.3.layers.3d.down.left")
             }
          
         }

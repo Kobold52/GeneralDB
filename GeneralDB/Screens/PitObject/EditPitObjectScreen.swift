@@ -24,7 +24,7 @@ struct EditPitObjectScreen: View {
                     pitObject.genreIcon
                     Text(pitObject.sourceName)
                     Text(pitObject.sourceVersion)
-                    TextField("Name des PitObjects", text: $pitObject.name)
+                    TextField("Bezeichnung des realen Objektes", text: $pitObject.name)
                         .padding(5)
                         .background(Color(.gray).opacity(0.3))
                         .overlay {

@@ -19,7 +19,7 @@ struct EditObjectPatternScreen: View {
         Form {
             HStack {
                 objectPattern.genreIcon
-                Text(objectPattern.genre.descr)
+//                Text(objectPattern.genre.descr)
                 Text(objectPattern.name)
             }
             .font(.title2.bold())
@@ -30,9 +30,9 @@ struct EditObjectPatternScreen: View {
             
             // Liste aller Attribute
             HStack {
-                Text("List of attributs ( \(objectPattern.attributs.count) )")
+                Text("Liste der Attribute (\(objectPattern.attributs.count))")
                 Spacer()
-                Button("Add Attribut") {
+                Button("Attribut hinzufügen") {
                     showAttributSelectDialog = true
                 }
             }
@@ -46,7 +46,7 @@ struct EditObjectPatternScreen: View {
         }
         
         
-        .navigationTitle("Object pattern \(objectPattern.name)")
+        .navigationTitle("Objektmuster \(objectPattern.name)")
         .navigationBarTitleDisplayMode(.inline)
     }
 }

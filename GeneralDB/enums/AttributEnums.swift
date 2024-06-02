@@ -255,15 +255,15 @@ enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
     var descr: String {
         switch self {
         case .masterData:
-            return "Masterdata"
+            return "Stammdaten"
         case .commercialData:
-            return "Comercial"
+            return "Kaufm."
         case .operationalData:
-            return "Operational"
+            return "Betrieb"
         case .maintenanceData:
-            return "Maintenance"
+            return "Wartung"
         case .testing:
-            return "Testing"
+            return "Prüfung"
         case .undefind:
             return "alle"
         }

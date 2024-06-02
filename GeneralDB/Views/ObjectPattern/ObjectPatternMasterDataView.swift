@@ -20,8 +20,8 @@ struct ObjectPatternMasterDataView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Masterdata")
-                .font(.title2.bold())
+            Text("Bezeichnung des Objektmusters")
+                .italic()
            
             TextField("Name", text: $objectPattern.name)
                 .focused($focusField, equals: .name)
@@ -33,6 +33,9 @@ struct ObjectPatternMasterDataView: View {
                 .onSubmit {
                     focusField = .summary
                 }
+            
+            Text("ggfls. längere Beschreibung des Objektmusters")
+                .italic()
               
             TextField("", text: $objectPattern.summary, axis: .vertical)
                 .focused($focusField, equals: .summary)

@@ -15,6 +15,7 @@ struct ObjectPatternTypSelectionView: View {
             HStack {
                 if objectPattern.genre == ObjectType.unkown {
                     Text("Genre")
+                        .italic()
                     Picker("", selection: $objectPattern.genre) {
                         ForEach(ObjectType.allCases) { genre in
                             Text(genre.descr).tag(genre)
@@ -27,6 +28,7 @@ struct ObjectPatternTypSelectionView: View {
                
                 
                 Text("Status")
+                    .italic()
                 Picker("", selection: $objectPattern.status) {
                     ForEach(ObjectStatus.allCases) { status in
                         Text(status.descr).tag(status)

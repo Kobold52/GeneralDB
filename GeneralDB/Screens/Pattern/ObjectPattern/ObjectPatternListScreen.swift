@@ -16,9 +16,9 @@ struct ObjectPatternListScreen: View {
     
     var body: some View {
         ObjectPatternListView(searchString: searchText)
-            .navigationTitle("Object pattern")
+            .navigationTitle("Liste der Objektmuster")
             .toolbar {
-                Button("Add ObjectPattern", systemImage: "plus.circle", action: addObjectPattern)
+                Button("Objektmuster hinzufügen", systemImage: "plus.circle", action: addObjectPattern)
             }
             .searchable(text: $searchText)
     }

@@ -6,6 +6,7 @@ Tabellenspalten abgelegt bzw. gespeichert.
 
 Die Daten werden dann in einer Benutzeroberfläche in Form von Tabellen oder Karteikarten
 dargestellt bzw. gepflegt.
+
 D.h. der Umfang der Daten wird bei der Definition der jeweiligen Tabellen festgelegt. Sollen
 später Daten hinzugefügt werden, muss man die Datenbankstruktur und die Benutzeroberfläche
 ändern. 
@@ -13,6 +14,13 @@ später Daten hinzugefügt werden, muss man die Datenbankstruktur und die Benutz
 Ziel des Projektes ist, generisch Objektmuster mit Angabe der jeweiligen Daten/Eigenschaften
 definieren zu können, ohne dass bei einer späteren Änderung dieser Muster eine Änderung der
 Datenbank und der Benutzeroberfläche nach sich zieht.
+
+Es gibt 3 Programmbereiche:
+- Pattern: Programmteil für die Definition der Objektmuster mit seinen Attributsmuster
+- Attributpattern: Programmteil für die Vorlagen zur Bestimmung, was soll das Attribut darstellen
+- pitObjekte: Bearbeiten/Erzeugen von realen Objekten
+
+Schaffung einer Oberfläche mit der man beliebige Objektmuster mit seinen spezifischen Eigenschaften definieren und ablegen kann. Durch Wahl eines spezifischen Objektmuster erzeugt das Programm dynamisch ein reales Objekt mit allen vordefinerten Eigenschaften/Attributen. Die so erzeugten Objekte werden in einer Listen dargestellt. Wählt man ein spezifisches Objekt aus, so wird dynamisch das zugehörige Dateneingabeformular erzeugt
 
 Grundsätzliche Datenstruktur:
 
@@ -26,7 +34,7 @@ Tabelle Objektmuster u. Objekte
 Tabelle Attributmuster u. Attribute
 - Name
 - Eingabeaufforderung (im Eingabeformular)
-- Auswahl Datengattung (Texteingabe, Datumsangabe, Auswahlkatalog, Flächenangabe, Gewichtsangabe, …elektr. Leistungsangabe…)
+- Was beinhaltet das Attribut (Texteingabe, Datumsangabe, Auswahlkatalog, Flächenangabe, Gewichtsangabe, …elektr. Leistungsangabe, physikalische Eigenschaften, ...)
 - Datentyp (Text, Number, Datum, Auswahl, Data), Einheit (alle physikalischen Einheiten, Währungen, …)
 - Hilfetext für die Eingabeaufforderung
 - Versionierung der Dateneingabe (sollen später Eingabeänderungen protokolliert werden ja/nein)

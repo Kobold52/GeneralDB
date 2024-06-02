@@ -25,7 +25,7 @@ struct AttributPatternListScreen: View {
         NavigationStack {
             Group {
                 if objects.isEmpty {
-                    ContentUnavailableView("Load all attribut pattern", systemImage: "gearshape.2.fill")
+                    ContentUnavailableView("Muster aus der Bibliothek laden", systemImage: "gearshape.2.fill")
                 } else {
                     List {
                         ForEach(objects) { object in
@@ -41,13 +41,13 @@ struct AttributPatternListScreen: View {
             .frame(width: 600)
             .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
             
-            .navigationTitle("Attribut Pattern List")
+            .navigationTitle("Liste der Attributmuster")
             .toolbar {
 //                if objects.isEmpty {
                     Button {
                         createAttributPatternList()
                     } label: {
-                        Text("Create Pattern")
+                        Text("Muster laden")
                     }
 //                }
             }

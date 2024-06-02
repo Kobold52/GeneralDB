@@ -13,7 +13,7 @@ struct AttributPatternRowView: View {
     @Bindable var attribut: AttributPattern
     
     var versioniert: String {
-        return attribut.tracked ? "bell" : "bell.slash"
+        return attribut.tracked ? "recordingtape.circle" : ""
     }
     
     var body: some View {

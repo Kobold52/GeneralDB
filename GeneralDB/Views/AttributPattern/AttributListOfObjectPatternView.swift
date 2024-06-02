@@ -58,7 +58,7 @@ struct AttributListOfObjectPatternView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if objectPattern.attributs.isEmpty {
-                ContentUnavailableView("Enter your first attribut for object pattern.", systemImage: "gearshape.2.fill")
+                ContentUnavailableView("Sie müssen ein Attributmuster hinzufügen", systemImage: "gearshape.2.fill")
             } else {
                 HStack {
                     Text("Filter:")
@@ -82,7 +82,7 @@ struct AttributListOfObjectPatternView: View {
                         .frame(width: 70, alignment: .leading)
                     Text("Abfrage im Dialog")
                         .frame(width: 300, alignment: .leading)
-                    Text("Eingabe versioniert")
+                    Text("überwacht")
                         .frame(width: 100, alignment: .leading)
                         .lineLimit(1)
                 }
@@ -98,6 +98,7 @@ struct AttributListOfObjectPatternView: View {
                                 navigationPath.append(attribut)
                             }
                     }
+                    .padding(.bottom, 3)
                 }
             }
         }

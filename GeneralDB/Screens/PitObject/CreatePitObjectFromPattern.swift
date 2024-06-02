@@ -35,7 +35,7 @@ struct CreatePitObjectFromPattern: View {
                         }
                 }
             }
-            .navigationTitle("Object patterns")
+            .navigationTitle("Objekt erzeugen")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {

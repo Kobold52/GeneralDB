@@ -15,6 +15,7 @@ struct EditAttributPatternScreen: View {
     @Bindable var attribut: AttributPattern
     
     @FocusState private var focusField: FocusField?
+    
     var objectName: String {
         return attribut.objectPattern?.name ?? ""
     }
@@ -29,7 +30,7 @@ struct EditAttributPatternScreen: View {
             /// Screen titel
             HStack {
                 Text(objectName)
-                Text("Spezification of property \(attribut.name)")
+                Text("Attribut spezifizieren \(attribut.name)")
             }
             .font(.title2.bold())
             
@@ -41,16 +42,16 @@ struct EditAttributPatternScreen: View {
                 
                 VStack(alignment: .leading) {
                     
-                    Picker("Which datasheet category", selection: $attribut.group) {
+                    Picker("Karteikarten Kategorie", selection: $attribut.group) {
                         ForEach(DatasheetCategory.allCases, id: \.id) { group in
                             Text(group.descr).tag(group)
                         }
                     }
                     .italic().bold()
                     
-                    Text("Witch prompt should be indicated for input")
+                    Text("Text in der Eingabemaske")
                         .italic().bold()
-                    TextField("which prompt", text: $attribut.prompt)
+                    TextField("prompt", text: $attribut.prompt)
                         .focused($focusField, equals: .prompt)
                         .padding(.leading,2)
                         .border(Color.black)
@@ -67,11 +68,11 @@ struct EditAttributPatternScreen: View {
             if attribut.hasUnit {
                 HStack {
                     let units = getUnits()
-                    Text("Unit")
+                    Text("Einheit")
                         .italic().bold()
                     Text(Unit().getValue(value: 0.0, unit: attribut.unit, symbol: true))
                         .fontWeight(.heavy)
-                    Text("is predefined, but you can customize it for this specific case")
+                    Text("Die Einheit kann individuell angepasst werden")
                         .italic().bold()
                     Picker("", selection: $attribut.unit) {
                         ForEach(units, id: \.self) { unit in
@@ -92,7 +93,7 @@ struct EditAttributPatternScreen: View {
             /// Eingabe eines möglichen Hilfetextes
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Helpful hint for input data")
+                    Text("Hinweistext bei Unklarheiten")
                         .italic().bold()
                     Text(attribut.prompt)
                         .italic().fontWeight(.heavy)
@@ -111,10 +112,10 @@ struct EditAttributPatternScreen: View {
             /// Eingabe von TAG's
             VStack(alignment: .leading) {
                 
-                Text("For datamanagement is helpful to create TAGs")
+                Text("Für das Datenmanagement ist es hilfreich, TAG's zu definieren")
                     .italic().bold()
                   
-                TextField("TAG for data management", text: $attribut.tags, axis: .vertical)
+                TextField("TAG", text: $attribut.tags, axis: .vertical)
                     .padding(.leading,2)
                     .focused($focusField, equals: .tags)
                     .background(focusField == .tags ? .blue.opacity(0.3) : .gray.opacity(0.3))
@@ -129,20 +130,20 @@ struct EditAttributPatternScreen: View {
             }
             
             /// Soll die Eingabe versioniert werden
-            Toggle("Should the input be versioned?", isOn: $attribut.tracked)
+            Toggle("Sollen nachträgliche Wertänderungen gespeichert werden", isOn: $attribut.tracked)
                 .toggleStyle(CustomToggleStyle())
                 .italic().bold()
                 .frame(width: 350)
 
             /// Wenn keine Einheit, dann verschiedene Abfrage von möglichen Optionen
             if !attribut.hasUnit {
-                Text("The property is not determined by a given physical unit, so that further questions need to be answered\n")
+                Text("Das Attribut hat keine physikalische Einheit, so dass Zusatzinformationen ggfls. erforderlich werden\n")
                     .italic().bold()
                     .padding(.bottom,20)
                 /// Möglichkeit einer Abfrage mit vorgegebenen Antworten
                 if attribut.genre == .GeneralSelection {
                     VStack(alignment: .leading) {
-                        Text("Indicated genre is general selection, please define all cases")
+                        Text("Es sollen definierte Werte in einem Menü angebotenwerden\nTrage diese hier ein, Trennzeichen ist |")
                             .italic().bold()
                         TextField("cases", text: $attribut.selection, axis: .vertical)
                             .padding(.leading,2)
@@ -168,7 +169,7 @@ struct EditAttributPatternScreen: View {
         .background(ignoresSafeAreaEdges: .all)
         .background(Color.gray)
         .toolbar {
-            Button("Delete") {
+            Button("Löschen") {
                 modelContent.delete(attribut)
                 dismiss()
             }

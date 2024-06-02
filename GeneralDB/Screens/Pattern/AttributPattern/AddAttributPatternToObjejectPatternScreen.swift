@@ -102,7 +102,7 @@ struct AddAttributPatternToObjejectPatternScreen: View {
                         }
                         dismiss()
                     } label: {
-                        Text("save")
+                        Text("speichern")
                     }
                     .overlay {
                         RoundedRectangle(cornerRadius: 5)
