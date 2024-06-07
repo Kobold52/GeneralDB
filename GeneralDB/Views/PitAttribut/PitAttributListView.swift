@@ -17,10 +17,10 @@ struct PitAttributListView: View {
     @Binding var navigationPath: NavigationPath
     
     @FocusState private var isFocused: Bool
-
+   
     ///
     var attributs: [PitAttribut] {
-        
+        /// Filter für Filterleiste
         switch category {
         case .undefind:
             pitObject.attributs.sorted {
@@ -61,6 +61,7 @@ struct PitAttributListView: View {
     
     var body: some View {
         VStack {
+            /// Filterleiste
             HStack {
                 Text("Filter:")
                 Picker("", selection: $category) {
@@ -75,6 +76,7 @@ struct PitAttributListView: View {
             .background(Color.blue.opacity(0.2))
             .border(Color.black)
 
+            /// Titelzeile
             HStack {
                 Text("Eigenschaft")
                     .frame(width: 350, alignment: .leading)
@@ -91,9 +93,9 @@ struct PitAttributListView: View {
             .background(Color.gray.opacity(0.3))
 //            .border(Color.black)
             
+            /// Editierbare Liste der Attribute
             List {
                 ForEach(attributs) { attr in
-                    let oldValue = attr.validValue
                     HStack {
                         Text(attr.prompt)
                             .lineLimit(1)
@@ -103,30 +105,26 @@ struct PitAttributListView: View {
                         PitAttributEditValueView(pitAttribut: attr, navigationPath: $navigationPath)
                             .frame(width: 200, alignment: .leading)
                             .padding(2)
-                            .background(Color.blue.opacity(0.1))
+                            .background(attr.changed ? Color.blue.opacity(0.2) : Color.green.opacity(0.2))
                             .border(Color.black)
-                            .onSubmit {
-                                if oldValue != nil && attr.tracked {
-                                    let value = PitAttributValue(pitAttributValue: oldValue!)
-//                                    value.predecessor = oldValue?.id
-                                    print(oldValue?.id ?? "NIL")
-                                    attr.pitValues.append(value)
-                                }
-                                print(oldValue ?? "nil")
-                                print("submit \(attr.prompt)")
-                            }
                         Spacer()
                     }
                     .padding(.leading)
+   
                 }
-                
+
             }
-            
         }
         .padding(.bottom)
         .border(Color.black)
+        .toolbar {
+            Button("speichern") {
+                
+            }.disabled(pitObject.hasChanges)
+        }
     }
     
+  
 }
 
 //#Preview {

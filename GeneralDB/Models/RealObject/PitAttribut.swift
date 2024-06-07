@@ -37,13 +37,16 @@ class PitAttribut {
         self.group = pattern.group
         self.selection = pattern.selection
         self.tags = pattern.tags
+        self.pitValues = [PitAttributValue]()
     }
     
     @Transient var validValue: PitAttributValue? {
         return self.pitValues.filter {
-            $0.predecessor == nil
+            $0.successor == nil
         }.first
     }
+    
+    @Transient var changed: Bool = false
 }
 
 
