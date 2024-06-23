@@ -24,8 +24,10 @@ struct AttributPatternRowView: View {
                 Text(Unit().getValue(value: 0.0, unit: attribut.unit, symbol: true))
                     .frame(width: 70, alignment: .leading)
                 Text(attribut.prompt)
-                    .frame(width: 300, alignment: .leading)
+                    .frame(width: 200, alignment: .leading)
                 Image(systemName: versioniert)
+                    .frame(width: 100, alignment: .leading)
+                Text(attribut.group.descr)
                     .frame(width: 100, alignment: .leading)
             }
         }

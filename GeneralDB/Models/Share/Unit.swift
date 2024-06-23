@@ -18,7 +18,7 @@ import UIKit
 
 
 class UnitVolumePower: Dimension {
-    static let cubicMeterPerHour = UnitVolumePower(symbol: "m3/h", converter: UnitConverterLinear(coefficient: 1.0))
+    static let cubicMeterPerHour = UnitVolumePower(symbol: "m\u{00B3}/h", converter: UnitConverterLinear(coefficient: 1.0))
     static let litersPerHour = UnitVolumePower(symbol: "ltr/h", converter: UnitConverterLinear(coefficient: 0.001))
     
     static let baseUnit = UnitVolumePower.cubicMeterPerHour
@@ -375,6 +375,13 @@ struct Unit: Hashable, Codable {
 //    }
     
     
+//    func getMeasurment((value: Double, unit: String) -> Measurement<Unit> {
+//        switch unit {
+//        case "UnitElectricEnergy.wattHour":
+//            return Measurement(value: value, unit: UnitElectricEnergy.wattHour)
+//        }
+//    }
+    
     //
     func getValue(value: Double, unit: String, symbol: Bool) -> String {
         
@@ -483,7 +490,7 @@ struct Unit: Hashable, Codable {
                 return newValue.formatted(.measurement(width: .narrow, usage: .asProvided, numberFormatStyle: .number.precision(.fractionLength(2))))
             }
 
-        case "UnitAcceleration.UnitAcceleration":
+        case "UnitAcceleration.gravity":
             let newValue = Measurement(value: value, unit: UnitAcceleration.baseUnit())
             if symbol {
                 return newValue.unit.symbol

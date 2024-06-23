@@ -22,6 +22,7 @@ class PitAttribut {
     var selection: String = ""
     var tags: String = ""
     var pitObject: PitObject?
+    var relationToObjectGenre: ObjectType = ObjectType.unkown
     @Relationship(deleteRule: .cascade, inverse: \PitAttributValue.pitAttribut) var pitValues = [PitAttributValue]()
     
     
@@ -38,12 +39,17 @@ class PitAttribut {
         self.selection = pattern.selection
         self.tags = pattern.tags
         self.pitValues = [PitAttributValue]()
+        self.relationToObjectGenre = pattern.objectRelation
     }
     
     @Transient var validValue: PitAttributValue? {
         return self.pitValues.filter {
             $0.successor == nil
         }.first
+    }
+    
+    @Transient var hasHistory: Bool {
+        return self.pitValues.count >= 2 || self.tracked
     }
     
     @Transient var changed: Bool = false

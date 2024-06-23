@@ -33,13 +33,15 @@ class PitAttributValue {
     var valueDate: Date?
     var valueURL: String?
     var valuePicker: String?
+    var objectGenre: ObjectType?
     var created: Date?
     var changed: Date?
+    @Relationship var pitObject: PitObject? // Relation zu einem anderen Objekt
     @Relationship var pitAttribut: PitAttribut?
     var successor: PitAttributValue?
    
-    
-    init(valueText: String? = nil, valueInteger: Int? = nil, valueNumber: Float? = nil, valueDate: Date? = nil, valueURL: String? = nil, valuePicker: String? = nil, created: Date? = nil, changed: Date? = nil, pitAttribut: PitAttribut? = nil, predecessor: PitAttributValue? = nil ) {
+   
+    init(valueText: String? = nil, valueInteger: Int? = nil, valueNumber: Float? = nil, valueDate: Date? = nil, valueURL: String? = nil, valuePicker: String? = nil, objectGenre: ObjectType? = nil, created: Date? = nil, changed: Date? = nil, pitObject: PitObject? = nil, pitAttribut: PitAttribut? = nil, successor: PitAttributValue? = nil) {
         self.id = UUID()
         self.valueText = valueText
         self.valueInteger = valueInteger
@@ -47,10 +49,12 @@ class PitAttributValue {
         self.valueDate = valueDate
         self.valueURL = valueURL
         self.valuePicker = valuePicker
+        self.objectGenre = objectGenre
         self.created = created
         self.changed = changed
+        self.pitObject = pitObject
         self.pitAttribut = pitAttribut
-        self.successor = predecessor
+        self.successor = successor
     }
     
     init(pitAttributValue: PitAttributValue) {
@@ -61,10 +65,13 @@ class PitAttributValue {
         self.valueDate = pitAttributValue.valueDate
         self.valueURL = pitAttributValue.valueURL
         self.valuePicker = pitAttributValue.valuePicker
+        self.objectGenre = pitAttributValue.objectGenre
         self.created = pitAttributValue.created
         self.changed = pitAttributValue.changed
+        self.pitObject = pitAttributValue.pitObject
         self.pitAttribut = pitAttributValue.pitAttribut
         self.successor = pitAttributValue.successor
     }
     
+
 }

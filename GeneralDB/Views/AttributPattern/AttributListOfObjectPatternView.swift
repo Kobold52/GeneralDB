@@ -81,10 +81,12 @@ struct AttributListOfObjectPatternView: View {
                     Text("Einheit")
                         .frame(width: 70, alignment: .leading)
                     Text("Abfrage im Dialog")
-                        .frame(width: 300, alignment: .leading)
+                        .frame(width: 200, alignment: .leading)
                     Text("überwacht")
                         .frame(width: 100, alignment: .leading)
-                        .lineLimit(1)
+                    Text("Kategorie")
+                        .frame(width: 100, alignment: .leading)
+                    
                 }
                 .padding(.leading)
                 .fontWeight(.bold)

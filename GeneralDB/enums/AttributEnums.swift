@@ -44,6 +44,8 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
     case Peace = 32
     case Currency = 33
     case Percent = 34
+    /// Erweiterung
+    case Relation = 35
 
     var id: Self {
         self
@@ -112,9 +114,9 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
         case .Temperature:
             "Temperature"
         case .Volume:
-            "Volumne"
+            "Volume"
         case .VolumePower:
-            "Volumn Power"
+            "Volume Power"
         case .Peace:
             "Piece"
   
@@ -122,6 +124,9 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "Currency"
         case .Percent:
             "Percent"
+            
+        case .Relation:
+            "Any Relation"
         }
     }
     
@@ -188,9 +193,9 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
         case .Temperature:
             "UnitTemperature"
         case .Volume:
-            "UnitVolumne"
+            "UnitVolume"
         case .VolumePower:
-            "UnitVolumnPower"
+            "UnitVolumePower"
         case .Peace:
             "Peace"
         
@@ -198,6 +203,8 @@ enum AttributGenre: Int, Codable, Identifiable, CaseIterable  {
             "Currency"
         case .Percent:
             "Percent"
+        case .Relation:
+            "AnyRelation"
         }
     }
 }
@@ -212,6 +219,7 @@ enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
     case Picker = 5
     case URL = 6
     case File = 7
+    case ObjRelation = 8
     
     var id: Self {
         self
@@ -235,6 +243,8 @@ enum AttributDataType: Int, Codable, Identifiable, CaseIterable {
             "URL"
         case .File:
             "File"
+        case .ObjRelation:
+            "Relation"
         }
     }
 }
@@ -265,7 +275,7 @@ enum DatasheetCategory: Int, Codable, Identifiable, CaseIterable {
         case .testing:
             return "Prüfung"
         case .undefind:
-            return "alle"
+            return "kein"
         }
     }
 

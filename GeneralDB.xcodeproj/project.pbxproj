@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD2E0FC72C1DB83000FF7CC0 /* PitObjektSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2E0FC62C1DB83000FF7CC0 /* PitObjektSelectionView.swift */; };
 		FD4D6A832BF4D518007BD001 /* EditAttributPatternScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */; };
 		FD4D6A852BFCEB88007BD001 /* HelpTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A842BFCEB88007BD001 /* HelpTextView.swift */; };
 		FD4D6A872BFF6DB5007BD001 /* CustomToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4D6A862BFF6DB5007BD001 /* CustomToggleStyle.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD2E0FC62C1DB83000FF7CC0 /* PitObjektSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitObjektSelectionView.swift; sourceTree = "<group>"; };
 		FD4D6A822BF4D518007BD001 /* EditAttributPatternScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAttributPatternScreen.swift; sourceTree = "<group>"; };
 		FD4D6A842BFCEB88007BD001 /* HelpTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTextView.swift; sourceTree = "<group>"; };
 		FD4D6A862BFF6DB5007BD001 /* CustomToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleStyle.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				FD4D6AB42C023FC0007BD001 /* PitObjectListView.swift */,
+				FD2E0FC62C1DB83000FF7CC0 /* PitObjektSelectionView.swift */,
 				FD4D6AB62C033797007BD001 /* PitObjectRowView.swift */,
 			);
 			path = PitObject;
@@ -382,6 +385,7 @@
 				FD6D3F1F2BEE3B4800D8D8F7 /* ObjectPatternTypSelectionView.swift in Sources */,
 				FD6D3F162BEE29C300D8D8F7 /* AttributPatternListScreen.swift in Sources */,
 				FD6D3F1B2BEE2DFC00D8D8F7 /* AttributPatternRowView.swift in Sources */,
+				FD2E0FC72C1DB83000FF7CC0 /* PitObjektSelectionView.swift in Sources */,
 				FD4D6AB22C023D82007BD001 /* EditPitObjectScreen.swift in Sources */,
 				FD6D3F1D2BEE2E6F00D8D8F7 /* Unit.swift in Sources */,
 				FD6D3F252BEE6A6600D8D8F7 /* AttributListOfObjectPatternView.swift in Sources */,

@@ -47,7 +47,8 @@ extension AttributPattern {
             AttributPattern(name: "Date", prompt: "?", genre: .GeneralDate, dataTyp: .Date, unit: "", group: .undefind),
             AttributPattern(name: "File", prompt: "?", genre: .GeneralData, dataTyp: .File, unit: "", group: .undefind),
             AttributPattern(name: "URL", prompt: "?", genre: .GeneralURL, dataTyp: .URL, unit: "", group: .undefind),
-            AttributPattern(name: "Selection", prompt: "?", genre: .GeneralSelection, dataTyp: .Picker, unit: "", group: .undefind)
+            AttributPattern(name: "Selection", prompt: "?", genre: .GeneralSelection, dataTyp: .Picker, unit: "", group: .undefind),
+            AttributPattern(name: "Relation", prompt: "?", genre: .Relation, dataTyp: .ObjRelation, unit: "", group: .undefind)
             
             
             // AttributPattern(name: " indication", prompt: "?", genre: .Aceleration, dataTyp: .Number, unit: ""),

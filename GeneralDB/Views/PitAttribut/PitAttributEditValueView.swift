@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PitAttributEditValueView: View {
     
     @Environment(\.modelContext) var modelContext
-        
+    
     @Bindable var pitAttribut: PitAttribut
     @Binding var navigationPath: NavigationPath
     
@@ -21,6 +22,8 @@ struct PitAttributEditValueView: View {
     @State var valueURL: String?
     @State var valueFile: String?
     @State var valuePicker: String?
+    @State var valueRelation: PitObject? = nil
+    @State var relationObjects: [PitObject]? = nil
     
     /// pitValue wird gesetzt
     var pitValue: PitAttributValue {
@@ -56,13 +59,26 @@ struct PitAttributEditValueView: View {
             pitAttribut.changed =  pitValue.valuePicker != valuePicker
         case .URL:
             pitAttribut.changed =  pitValue.valueURL != valueURL
+        case .ObjRelation:
+            pitAttribut.changed = pitValue.pitObject != valueRelation
         }
         return pitAttribut.changed
     }
     
+//    var :relationObjects [PitObject] {
+//        // nur wenn .ObjRelation
+//        if pitAttribut.dataTyp != .ObjRelation {
+//            return [PitObject]()
+//        }
+//        // Query der pitObjekte mit ObjektTyp == pitAttribut.objectRelation
+//        @Query var relationObjects: [PitObject]
+//            return [PitObject]()
+//       
+//    }
+    
     var body: some View {
         ///  Dateneingabe
-        VStack {
+        HStack {
             switch pitAttribut.dataTyp {
             case .Text:
                 TextField("", text: Binding(
@@ -85,7 +101,7 @@ struct PitAttributEditValueView: View {
                 .keyboardType(.numberPad)
                 
             case .File:
-                Text("????")
+                Text("muss erst umgesetzt werden")
                 //            fatalError("Diese Option ist noch nicht umgesetzt")
             case .Number:
                 TextField("", text: Binding(
@@ -120,27 +136,37 @@ struct PitAttributEditValueView: View {
                     get: { valueURL ?? "" },
                     set: { valueURL = $0.isEmpty ? nil : $0 }
                 ))
+            case .ObjRelation: do {
+                    /// First: Objekte mit vorgegebenen ObjektTyp für Picker bereitstellen in pickerValues
+                    PitObjektSelectionView(objektTyp: pitAttribut.relationToObjectGenre, valueRelation: $valueRelation)
+                }
             }
         }
         /// Daten werden aus der DB gelesen
         .onAppear() {
             switch pitAttribut.dataTyp {
-            case .Text:
-                valueText = pitValue.valueText
-            case .Date:
-                valueDate = pitValue.valueDate
-            case .Integer:
-                valueInteger = pitValue.valueInteger
-            case .File:
-                valueFile = pitValue.valueText
-            case .Number:
-                valueNumber = pitValue.valueNumber
-            case .Picker:
-                valuePicker = pitValue.valuePicker
-            case .URL:
-                valueURL = pitValue.valueURL
-            case .unkown:
-                print("ACHTUNG: .unkown darf nicht vorkommen")
+                case .Text:
+                    valueText = pitValue.valueText
+                case .Date:
+                    valueDate = pitValue.valueDate
+                case .Integer:
+                    valueInteger = pitValue.valueInteger
+                case .File:
+                    valueFile = pitValue.valueText
+                case .Number:
+                    valueNumber = pitValue.valueNumber
+                case .Picker:
+                    valuePicker = pitValue.valuePicker
+                case .URL:
+                    valueURL = pitValue.valueURL
+                case .unkown:
+                    print("ACHTUNG: .unkown darf nicht vorkommen")
+                case .ObjRelation: do {
+                    guard pitAttribut.relationToObjectGenre != .unkown else {
+                        fatalError()
+                    }
+                    valueRelation = pitValue.pitObject
+                }
             }
         }
         /// Daten werden beim Schließen des Dialoges in die DB geschrieben
@@ -169,6 +195,8 @@ struct PitAttributEditValueView: View {
                     newValue.valueURL = valueURL
                 case .unkown:
                     print("ACHTUNG: .unkown darf nicht vorkommen")
+                case .ObjRelation:
+                    newValue.pitObject = valueRelation
                 }
                 
             } else {
@@ -190,6 +218,8 @@ struct PitAttributEditValueView: View {
                 case .unkown:
                     print("ACHTUNG: .unkown darf nicht vorkommen")
                     
+                case .ObjRelation:
+                    pitValue.pitObject = valueRelation
                 }
                 
             }

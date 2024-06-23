@@ -15,6 +15,7 @@ struct EditAttributPatternScreen: View {
     @Bindable var attribut: AttributPattern
     
     @FocusState private var focusField: FocusField?
+    @State private var relationObjekt: ObjectType = .unkown
     
     var objectName: String {
         return attribut.objectPattern?.name ?? ""
@@ -141,23 +142,43 @@ struct EditAttributPatternScreen: View {
                     .italic().bold()
                     .padding(.bottom,20)
                 /// Möglichkeit einer Abfrage mit vorgegebenen Antworten
-                if attribut.genre == .GeneralSelection {
-                    VStack(alignment: .leading) {
-                        Text("Es sollen definierte Werte in einem Menü angebotenwerden\nTrage diese hier ein, Trennzeichen ist |")
-                            .italic().bold()
-                        TextField("cases", text: $attribut.selection, axis: .vertical)
-                            .padding(.leading,2)
-                            .focused($focusField, equals: .selection)
-                            .background(focusField == .selection ? .blue.opacity(0.3) : .gray.opacity(0.3))
-                            .border(Color.black)
-                            .onSubmit {
-                                // check the input is ok
-                                focusField = .prompt
+                switch attribut.genre {
+                    case .GeneralSelection: do {
+                        VStack(alignment: .leading) {
+                            Text("Es sollen definierte Werte in einem Menü angebotenwerden\nTrage diese hier ein, Trennzeichen ist |")
+                                .italic().bold()
+                            TextField("cases", text: $attribut.selection, axis: .vertical)
+                                .padding(.leading,2)
+                                .focused($focusField, equals: .selection)
+                                .background(focusField == .selection ? .blue.opacity(0.3) : .gray.opacity(0.3))
+                                .border(Color.black)
+                                .onSubmit {
+                                    // check the input is ok
+                                    focusField = .prompt
+                                }
+                        }
+                    }
+                    case .Relation: do {
+                        VStack (alignment: .leading) {
+                            Text("Es soll eine mögliche Relation zu einem beliebigen Objekt angegeben werden\nGeben Sie jetzt den Objekttyp an, zu dem eine Relation definiert werden soll")
+                            HStack {
+                                Text("Objekttyp:")
+                                Picker("", selection: $attribut.objectRelation) {
+                                    ForEach(ObjectType.allCases) { genre in
+                                        Text(genre.descr).tag(genre)
+                                    }
+                                }
+                                .border(.selection)
+                               
                             }
-                        
+                        }
+                               
+                    }
+                    default: do {
+                        // mache nichts
                     }
                 }
-
+             
                 /// Möglichkeit Bilder aus der Fotobibliothek auszuwählen bzw. mit der Kamera zu schießen
             
                 /// ....
@@ -176,6 +197,9 @@ struct EditAttributPatternScreen: View {
         }
         .onAppear() {
             focusField = .prompt
+        }
+        .onDisappear() {
+            /// to Do
         }
     }
     

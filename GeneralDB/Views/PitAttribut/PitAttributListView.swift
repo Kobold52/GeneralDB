@@ -17,6 +17,8 @@ struct PitAttributListView: View {
     @Binding var navigationPath: NavigationPath
     
     @FocusState private var isFocused: Bool
+    
+    @State private var showHistory = false
    
     ///
     var attributs: [PitAttribut] {
@@ -69,8 +71,10 @@ struct PitAttributListView: View {
                         Text(group.descr).tag(group)
                             .italic()
                     }
+                    
                 }
                 .pickerStyle(SegmentedPickerStyle())
+                
             }
             .padding(.horizontal, 2)
             .background(Color.blue.opacity(0.2))
@@ -107,12 +111,21 @@ struct PitAttributListView: View {
                             .padding(2)
                             .background(attr.changed ? Color.blue.opacity(0.2) : Color.green.opacity(0.2))
                             .border(Color.black)
+                        if attr.hasHistory {
+                            Image(systemName: "list.bullet.rectangle")
+                                .padding(.leading, 5)
+                                .onTapGesture {
+                                   showHistory = true
+                                }
+                                .alert("History of \(attr.prompt)", isPresented: $showHistory) {
+                                    Button("ok", role:  .cancel) { }
+                                }
+                        }
                         Spacer()
                     }
                     .padding(.leading)
    
                 }
-
             }
         }
         .padding(.bottom)

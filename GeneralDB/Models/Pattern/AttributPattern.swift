@@ -24,6 +24,7 @@ class AttributPattern {
     var selection: String = ""
     var tags: String = ""
     var objectPattern: ObjectPattern?
+    var objectRelation: ObjectType = ObjectType.unkown
         
     init(name: String, prompt: String, genre: AttributGenre, dataTyp: AttributDataType, unit: String, help: String = "", tracked: Bool = false, changed: Date? = nil, group: DatasheetCategory = .undefind, objectPattern: ObjectPattern? = nil) {
         self.id = UUID()
@@ -55,6 +56,7 @@ class AttributPattern {
         self.selection = attributPattern.selection
         self.tags = attributPattern.tags
         self.objectPattern = attributPattern.objectPattern
+        self.objectRelation = attributPattern.objectRelation
     }
     
     @Transient var hasUnit: Bool {
