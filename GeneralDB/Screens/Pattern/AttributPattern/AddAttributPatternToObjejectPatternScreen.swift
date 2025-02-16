@@ -52,13 +52,15 @@ struct AddAttributPatternToObjejectPatternScreen: View {
     @FocusState private var focusField: FocusField?
     
     let helpText = """
-    Die obere Liste dient als Kopiervorlage von Objekteigenschaften, sie kann jederzeit durch Angabe eines Textmusters in der Suchzeile eingegrenzt werden.
+    Füge jetzt alle Eigenschaften dem Objekt zu.
     
-    Durch Anklicken werden diese in die untere Liste kopiert, mehrfaches Einfügen ist möglich.
+    Die obere Liste ist ein Katalog möglicher Eigenschaften eines Objektes mit/ohne physikalischer Einheit. Durch Angabe eines Textmusters in der Suchzeile kann die Liste eingegrenzt werden.
+    
+    Durch einfaches Anklicken der gewünschten Eigenschaft wird diese dem aktuellen Objekt zugeordnet (siehe untere Liste), mehrfaches Zuordnen ist möglich.
     
     Sind so alle gewünschten Eigenschaften für das aktuelle Objekt zusammengestellt, können diese durch klicken auf 'Zuordnen´ dem Objekt endgültig hinzugefügt und gespeichert werden.
     
-    Diesen Vorgang können Sie jederzeit wiederholen.
+    Diesen Vorgang können Sie jederzeit wiederholen, um z.B. einem vorhandenen Objektmuster eine neue zusätzliche Eigenschaft zuzuordnen.
     """
     
     var body: some View {

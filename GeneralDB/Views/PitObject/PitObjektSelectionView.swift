@@ -24,7 +24,7 @@ struct PitObjektSelectionView: View {
     var body: some View {
         Picker("", selection: $valueRelation) {
             ForEach(relations) { relation in
-                Text("\(relation.name)").tag(relation as PitObject?)
+                Text("\(relation.display)").tag(relation as PitObject?)
             }
         }
     }

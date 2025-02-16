@@ -24,7 +24,7 @@ struct ObjectPatternListScreen: View {
     }
     
     func addObjectPattern() {
-        let objectPattern = ObjectPattern(name: "", genre: .unkown, status: .inProgress, summary: "")
+        let objectPattern = ObjectPattern(name: "", genre: .unkown, status: .inProgress, summary: "", version: "0.0.0", lastmodified: .now)
         modelContext.insert(objectPattern)
         path.append(objectPattern)
     }

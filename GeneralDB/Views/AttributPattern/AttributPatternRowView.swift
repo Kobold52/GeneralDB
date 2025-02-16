@@ -20,7 +20,9 @@ struct AttributPatternRowView: View {
         ScrollView(.horizontal) {
             HStack {
                 Text(attribut.genre.descr)
-                    .frame(width: 200, alignment: .leading)
+                    .frame(width: 180, alignment: .leading)
+                Text(attribut.display)
+                    .frame(width: 20, alignment: .leading)
                 Text(Unit().getValue(value: 0.0, unit: attribut.unit, symbol: true))
                     .frame(width: 70, alignment: .leading)
                 Text(attribut.prompt)

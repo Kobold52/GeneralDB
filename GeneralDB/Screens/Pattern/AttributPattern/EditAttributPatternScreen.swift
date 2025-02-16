@@ -49,17 +49,25 @@ struct EditAttributPatternScreen: View {
                         }
                     }
                     .italic().bold()
-                    
-                    Text("Text in der Eingabemaske")
-                        .italic().bold()
-                    TextField("prompt", text: $attribut.prompt)
-                        .focused($focusField, equals: .prompt)
-                        .padding(.leading,2)
-                        .border(Color.black)
-                        .background(focusField == .prompt ? .blue.opacity(0.3) : .gray.opacity(0.3))
-                        .onSubmit {
-                            focusField = .helpText
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("Text in der Eingabemaske")
+                                .italic().bold()
+                            TextField("prompt", text: $attribut.prompt)
+                                .focused($focusField, equals: .prompt)
+                                .padding(.leading,2)
+                                .border(Color.black)
+                                .background(focusField == .prompt ? .blue.opacity(0.3) : .gray.opacity(0.3))
+                                .onSubmit {
+                                    focusField = .helpText
+                                }
                         }
+                        VStack(alignment: .leading) {
+                            Text("Display")
+                            TextField("sort", text: $attribut.display)
+                        }
+                        
+                    }
                 }
                 
                 

@@ -35,6 +35,16 @@ class PitObject {
     }
 
     // Hilfsattribute
+    @Transient var display: String {
+        var temp: String = ""
+        let displayAttributs = self.attributs.filter {
+            $0.display != ""
+        }
+        displayAttributs.forEach { anzeige in
+            temp += anzeige.validValue?.valueText ?? ""
+        }
+        return temp + " - " + self.name
+    }
     
     @Transient var genreIcon: Image {
         switch ObjectType(rawValue: genre.rawValue ) {

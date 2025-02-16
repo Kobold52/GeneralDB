@@ -19,7 +19,7 @@ struct EditObjectPatternScreen: View {
         Form {
             HStack {
                 objectPattern.genreIcon
-//                Text(objectPattern.genre.descr)
+                Text(objectPattern.genre.descr)
                 Text(objectPattern.name)
             }
             .font(.title2.bold())
@@ -30,9 +30,9 @@ struct EditObjectPatternScreen: View {
             
             // Liste aller Attribute
             HStack {
-                Text("Liste der Attribute (\(objectPattern.attributs.count))")
+                Text("Alle Eigenschaften (Attribute) Anzahl (\(objectPattern.attributs.count))")
                 Spacer()
-                Button("Attribut hinzufügen") {
+                Button("Eigenschaft hinzufügen") {
                     showAttributSelectDialog = true
                 }
             }

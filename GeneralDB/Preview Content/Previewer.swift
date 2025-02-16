@@ -22,7 +22,7 @@ struct Previewer {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         container = try ModelContainer(for: ObjectPattern.self, configurations: config)
         
-        objectPattern = ObjectPattern(name: "Transformator", genre: .Equipment, status: .inProgress, summary: "Beschreibung des Objektes")
+        objectPattern = ObjectPattern(name: "Transformator", genre: .Equipment, status: .inProgress, summary: "Beschreibung des Objektes", version: "0.0.0")
         attributPattern = AttributPattern(name: "Electric Power", prompt: "Prompt", genre: .ElectricPower, dataTyp: .Number, unit: "UnitElectricPower.kiloWatt", group: .undefind, objectPattern: objectPattern)
         
         container.mainContext.insert(attributPattern)

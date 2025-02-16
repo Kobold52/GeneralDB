@@ -19,6 +19,7 @@ struct PitAttributListView: View {
     @FocusState private var isFocused: Bool
     
     @State private var showHistory = false
+    @State private var showSelectionDialog = false
    
     ///
     var attributs: [PitAttribut] {
@@ -111,6 +112,15 @@ struct PitAttributListView: View {
                             .padding(2)
                             .background(attr.changed ? Color.blue.opacity(0.2) : Color.green.opacity(0.2))
                             .border(Color.black)
+                        /// Wenn der AttributValue eine Relation zu einem anderen Objekt ist
+                        if attr.genre == .Relation {
+                            Image(systemName: "filemenu.and.selection")
+                                .padding(.leading, 5)
+                                .onTapGesture {
+                                    showSelectionDialog = true
+                                }
+                        }
+                        /// Wenn es eine Historie zum AttributValue gibt
                         if attr.hasHistory {
                             Image(systemName: "list.bullet.rectangle")
                                 .padding(.leading, 5)
@@ -124,8 +134,14 @@ struct PitAttributListView: View {
                         Spacer()
                     }
                     .padding(.leading)
+//                    .onLongPressGesture {
+//                        showSelectionDialog = true
+//                    }
    
                 }
+            }
+            .sheet(isPresented: $showSelectionDialog) {
+                Text("Komfortabler Auswahldialog")
             }
         }
         .padding(.bottom)

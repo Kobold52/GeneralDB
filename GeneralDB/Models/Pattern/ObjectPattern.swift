@@ -9,21 +9,24 @@ import SwiftUI
 import SwiftData
 
 @Model
-class ObjectPattern {
+class ObjectPattern /*: LastModifiedTrackable */ {
     var id: UUID
     var name: String
     var genre: ObjectType
     var status: ObjectStatus
     var summary: String
     var version: String = "0.0.0"
+    var lastModified: Date
     @Relationship(deleteRule: .cascade, inverse: \AttributPattern.objectPattern) var attributs = [AttributPattern]()
     
-    init(name: String, genre: ObjectType, status: ObjectStatus, summary: String, attributs: [AttributPattern] = [AttributPattern]()) {
+    init(name: String, genre: ObjectType, status: ObjectStatus, summary: String, version: String, lastmodified: Date = Date(), attributs: [AttributPattern] = [AttributPattern]()) {
         self.id = UUID()
         self.name = name
         self.genre = genre
         self.status = status
         self.summary = summary
+        self.version = version
+        self.lastModified = lastmodified
         self.attributs = attributs
     }
     
@@ -92,5 +95,7 @@ struct CodableObjectPattern: Codable {
     var genre: ObjectType
     var status: ObjectStatus
     var summary: String
+    var version: String
+    var lastmodified: Date
     var codableAttributPattern: [CodableAttributPattern]
 }

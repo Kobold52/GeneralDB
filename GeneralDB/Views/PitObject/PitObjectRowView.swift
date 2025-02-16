@@ -19,7 +19,7 @@ struct PitObjectRowView: View {
         HStack {
             pitObject.genreIcon
             Text(pitObject.sourceName)
-            Text(pitObject.name)
+            Text(pitObject.display)
         }
     }
 }

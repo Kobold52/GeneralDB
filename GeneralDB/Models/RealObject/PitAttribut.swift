@@ -21,6 +21,7 @@ class PitAttribut {
     var group: DatasheetCategory = DatasheetCategory.undefind
     var selection: String = ""
     var tags: String = ""
+    var display: String = ""
     var pitObject: PitObject?
     var relationToObjectGenre: ObjectType = ObjectType.unkown
     @Relationship(deleteRule: .cascade, inverse: \PitAttributValue.pitAttribut) var pitValues = [PitAttributValue]()
@@ -38,6 +39,7 @@ class PitAttribut {
         self.group = pattern.group
         self.selection = pattern.selection
         self.tags = pattern.tags
+        self.display = pattern.display
         self.pitValues = [PitAttributValue]()
         self.relationToObjectGenre = pattern.objectRelation
     }
